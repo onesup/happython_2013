@@ -8,6 +8,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :phone
       t.string :address
       
+      ## Integrate the_role
+      t.integer :role_id
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

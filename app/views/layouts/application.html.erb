@@ -7,9 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/shared/main_nav' %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <%= yield %>
-
+<footer>
+  <%= link_to "관리자영역", admin_roles_path %>
+</footer>
 </body>
 </html>

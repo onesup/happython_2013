@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kfarm</title>
+  <%= stylesheet_link_tag    "the_role", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <%= render 'layouts/shared/main_nav' %>
+    <div class="row">
+      <div class="span12 header">
+        <h2>사용자 역할 관리</h2>
+      </div>
+    </div>
+    <div class="row">    
+      <div class="span2 manage_panel">
+        <%= yield :role_sidebar%>
+      </div>
+      <div class="span10">
+        <%= yield :role_main%>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
