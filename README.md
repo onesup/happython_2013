@@ -6,8 +6,11 @@
 ## 어드민 계정 생성
 `rake db:seed`
 
-| id        | admin@farmfarmmentor.org |
-|-----------|--------------------------|
-| password  | 12341234                 |
+[유저별 권한 설정방법(the_role)](https://github.com/the-teacher/the_role)
+
+| id                        | password |
+|---------------------------|----------|
+| admin@farmfarmmentor.org  | 12341234 |
+
 ## 서버 실행
 `rails s`
