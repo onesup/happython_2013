@@ -19,7 +19,7 @@
 
 모델간 관계
 ========
-## user, job, application 모델 설명
+## user, job 모델 설명
 
 user는 job을 만들 수 있습니다.
 
@@ -52,3 +52,22 @@ puts j.mentees.last.name
 => nil
 
 ```````````````````````````````
+
+job을 만든 사람을 보기 위해서는
+
+`job.mentor`
+
+job에 참여한 사람들을 보기 위해서는
+
+`job.mentees`
+
+user가 만든 job을 보기 위해서는
+
+`user.wokrs`
+
+user가 참여한 job을 보기 위해서는
+
+`user.jobs`
+
+user, job 모델간의 관계는 이렇게 정리됩니다.
+
