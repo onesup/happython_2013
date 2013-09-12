@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130911025011) do
+ActiveRecord::Schema.define(version: 20130912020601) do
+
+  create_table "applications", force: true do |t|
+    t.integer  "mentee_id"
+    t.integer  "job_id"
+    t.boolean  "confirm"
+    t.datetime "confirmed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "applications", ["job_id"], name: "index_applications_on_job_id"
+  add_index "applications", ["mentee_id"], name: "index_applications_on_mentee_id"
+
+  create_table "jobs", force: true do |t|
+    t.integer  "mentor_id"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jobs", ["mentor_id"], name: "index_jobs_on_mentor_id"
 
   create_table "roles", force: true do |t|
     t.string   "name",        null: false
