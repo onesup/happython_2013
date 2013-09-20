@@ -1,0 +1,13 @@
+development:
+  :app_id: "628812140486031"
+  :app_secret: "cbe8247ebc90425d3a5a159cb19e0de2"
+
+test:
+  :app_id: "628812140486031"
+  :app_secret: "cbe8247ebc90425d3a5a159cb19e0de2"
+  
+
+production:
+  :app_id: "628812140486031"
+  :app_secret: "cbe8247ebc90425d3a5a159cb19e0de2"
+  
