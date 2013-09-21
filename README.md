@@ -4,11 +4,16 @@
 ## Facebook 앱 개설
 nitrous.io 와 같은 클라우드 개발환경을 쓰고 있다면 페북 로그인을 테스트하기 위해 별도의 facebook 앱을 https://developers.facebook.com/apps 에서 개설해야합니다.
 ## facebook.yml 설정
-1. ./config/facebook.yml.sample 파일의 복사본 생성.
-2. ./config/facebook.yml 으로 복사본의 이름을 변경.
-3. development와 test 항목의 `:app_id` 와 `:app_secret` 을 개설한 앱의 app\_id 와 app\_secret 으로 변경.
+1. `./config/facebook.yml.sample`파일의 복사본 생성.
+2. `./config/facebook.yml`로 복사본의 이름을 변경.
+3. development와 test 항목의 `:app_id`와 `:app_secret`을 개설한 앱의 `app_id` 와 `app_secret` 으로 변경.
 
 localhost:3000 을 개발 서버 주소로 사용 가능하다면 3번 과정과 Facebook 앱 개설 과정은 생략 가능합니다.
+## email.yml 설정
+1. `./config/email.yml.sample`파일의 복사본 생성.
+2. `./config/email.yml`로 복사본의 이름을 변경.
+3. development와 test 항목의 `:user_name`과 `:password`에 본인의 이메일 주소와 비밀번호를 입력.
+
 ## 번들링
 `bundle`
 ## 개발 데이터베이스 세팅
@@ -35,7 +40,7 @@ user는 job을 만들 수 있습니다.
 
 이 때 job의 입장에서 본 user는 mentor입니다.
 
-`````````````````````````````````````
+`````````````````````````````````````````````````````
 shlee = User.where(name: "이수형")
 apple_picking = shlee.works.create(title: "사과 수확")
 
@@ -46,22 +51,22 @@ puts apple_picking.mentor.name
 puts shlee.works.first.title
 사과수확
 => nil
-`````````````````````````````````````
+`````````````````````````````````````````````````````
 
 job과 work은 같은 테이블을 쓰지만 역할이 각기 다릅니다.
 멘토 shlee는 현재 work은 가지고 있지만, job은 가지고 있지 않습니다.
 
-`````````````````````````````````````
+`````````````````````````````````````````````````````````
 puts shlee.jobs.first.title
 NoMethodError: undefined method `title' for nil:NilClass
 
-`````````````````````````````````````
+`````````````````````````````````````````````````````````
 
 user는 만들어진 job에 참여할 수 있습니다.
 
 이 때 job의 입장에서 본 user는 mentee입니다.
 
-```````````````````````````````
+```````````````````````````````````````````
 apple_picking = Job.where(title: "사과 수확")
 onesup = User.find_by_name("이원섭").first
 apple_picking.mentees << onesup
@@ -74,31 +79,31 @@ puts onesup.jobs.first.title
 사과수확
 => nil
 
-```````````````````````````````
+```````````````````````````````````````````
 멘티 onesup은 job은 가지고 있지만 work은 가지고 있지 않습니다.
-```````````````````````````````
+```````````````````````````````````````````````````````````
 puts onesup.works.first.title
 NoMethodError: undefined method `title' for nil:NilClass
-```````````````````````````````
+```````````````````````````````````````````````````````````
 
 
-job을 만든 사람을 보기 위해서는
-```````````````````````````````
+job을 **만든** 사람을 보기 위해서는
+````````````````
 job = Job.first
 job.mentor
-```````````````````````````````
+````````````````
 
-job에 참여한 사람들을 보기 위해서는
+job에 **참여한** 사람들을 보기 위해서는
 
 `job.mentees`
 
-user가 만든 job을 보기 위해서는
-```````````````````````````````
+user가 **만든** job을 보기 위해서는
+``````````````````
 user = User.first
 user.wokrs
-```````````````````````````````
+``````````````````
 
-user가 참여한 job을 보기 위해서는
+user가 **참여한** job을 보기 위해서는
 
 `user.jobs`
 
