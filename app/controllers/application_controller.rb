@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   # your Access Denied processor
   def access_denied
-    return render(text: '승인이 필요합니다. 관리자에게 문의하세요^^')
+    return render(text: 'something wrong.')
   end
 
   # Define method aliases for the correct TheRole's controller work
