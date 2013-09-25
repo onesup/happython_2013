@@ -29,13 +29,7 @@ Kfarm::Application.configure do
   enable_starttls_auto: true,
   user_name: EMAIL_CONFIG[:user_name],
   password: EMAIL_CONFIG[:password]
-  
-  # domain: ENV["GMAIL_DOMAIN"],
-  # authentication: "plain",
-  # enable_starttls_auto: true,
-  # user_name: ENV["GMAIL_USERNAME"],
-  # password: ENV["GMAIL_PASSWORD"]
-  }
+}
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

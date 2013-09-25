@@ -34,7 +34,6 @@ namespace :deploy do
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-    #sudo "rm /etc/nginx/sites-enabled/default"
   end
   after "deploy:setup", "deploy:setup_config"
 
@@ -52,5 +51,14 @@ namespace :deploy do
     run "cd #{current_path}; rake db:migrate:reset RAILS_ENV=#{rails_env}; rake db:seed RAILS_ENV=#{rails_env}"
   end
   
+  desc "Make symlink for custom config yaml"
+  task :symlink do
+    run "ln -nfs #{shared_path}/config/facebook.yml #{latest_release}/config/facebook.yml"
+    run "ln -nfs #{shared_path}/config/email.yml #{latest_release}/config/email.yml"
+  end
+  
+  
   before "deploy", "deploy:check_revision"
 end
+
+
