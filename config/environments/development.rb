@@ -16,7 +16,11 @@ Kfarm::Application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  EMAIL_CONFIG = YAML.load_file("#{Rails.root}/config/email.yml")[Rails.env]
+  if File.exists? ("#{Rails.root}/config/email.yml")
+    EMAIL_CONFIG = YAML.load_file("#{Rails.root}/config/email.yml")[Rails.env]
+  else
+    EMAIL_CONFIG = {user_name: "temp@temp.org", password: "temp"}
+  end
   config.action_mailer.smtp_settings = {
   address: "smtp.gmail.com",
   port: 587,
