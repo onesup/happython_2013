@@ -56,7 +56,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/config/facebook.yml #{latest_release}/config/facebook.yml"
     run "ln -nfs #{shared_path}/config/email.yml #{latest_release}/config/email.yml"
   end
-  
+  after "deploy:finalize_update", "deploy:symlink"
   
   before "deploy", "deploy:check_revision"
 end
