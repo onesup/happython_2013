@@ -52,11 +52,11 @@ namespace :deploy do
   end
   
   desc "Make symlink for custom config yaml"
-  task :symlink do
+  task :create_symlink do
     run "ln -nfs #{shared_path}/config/facebook.yml #{latest_release}/config/facebook.yml"
     run "ln -nfs #{shared_path}/config/email.yml #{latest_release}/config/email.yml"
   end
-  after "deploy:finalize_update", "deploy:symlink"
+  after "deploy:finalize_update", "deploy:create_symlink"
   
   before "deploy", "deploy:check_revision"
 end
