@@ -40,14 +40,14 @@ namespace :deploy do
   task :upload_parameters do
     origin_file = "config/email.yml"
     puts origin_file
-    destination_file = "#{shared_path}/config/email.yml" # Notice the
+    destination_file = "#{shared_path}/config/email.yml"
     shared_path
-    run "mkdir -p #{File.dirname(destination_file)}"
+    run "mkdir -p /#{File.dirname(destination_file)}"
     top.upload(origin_file, destination_file)
     origin_file = "config/facebook.yml"
-    destination_file = shared_path + "#{shared_path}/config/facebook.yml" # Notice the
+    destination_file = shared_path + "#{shared_path}/config/facebook.yml"
     shared_path
-    run "mkdir -p #{File.dirname(destination_file)}"
+    run "mkdir -p /#{File.dirname(destination_file)}"
     top.upload(origin_file, destination_file)
     
   end
