@@ -78,4 +78,21 @@ Kfarm::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.default_url_options = { :host => 'kfarm.moncl.net' }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  if File.exists? ("#{Rails.root}/config/email.yml")
+    EMAIL_CONFIG = YAML.load_file("#{Rails.root}/config/email.yml")[Rails.env]
+  else
+    EMAIL_CONFIG = {user_name: "temp@temp.org", password: "temp"}
+  end
+  config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "farmfarmmentor.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: EMAIL_CONFIG[:user_name],
+  password: EMAIL_CONFIG[:password]
+}
+  
 end
