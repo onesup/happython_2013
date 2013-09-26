@@ -37,6 +37,26 @@ namespace :deploy do
   end
   after "deploy:setup", "deploy:setup_config"
 
+  task :upload_facebook_parameters do
+    origin_file = "config/facebook.yml"
+    destination_file = shared_path + "/config/facebook.yml" # Notice the
+    shared_path
+
+    try_sudo "mkdir -p #{File.dirname(destination_file)}"
+    top.upload(origin_file, destination_file)
+  end
+  
+  task :upload_email_parameters do
+    origin_file = "config/email.yml"
+    destination_file = shared_path + "/config/email.yml" # Notice the
+    shared_path
+
+    try_sudo "mkdir -p #{File.dirname(destination_file)}"
+    top.upload(origin_file, destination_file)
+  end
+  after "deploy:setup", "deploy:upload_facebook_parameters"
+  after "deploy:setup", "deploy:upload_email_parameters"
+
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
     unless `git rev-parse HEAD` == `git rev-parse origin/master`
@@ -48,7 +68,7 @@ namespace :deploy do
   
   desc "reload the database with seed data"
   task :seed do
-    run "cd #{current_path}; rake db:migrate:reset RAILS_ENV=#{rails_env}; rake db:seed RAILS_ENV=#{rails_env}"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env}; rake db:seed RAILS_ENV=#{rails_env}"
   end
   
   desc "Make symlink for custom config yaml"
