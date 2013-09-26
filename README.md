@@ -42,7 +42,7 @@ rails에서의 view 작업 시 유의사항
 `<a href="/">첫화면으로</a>`
 
 `<%= link_to "첫화면으로", "root_path" >`
-이 때 각 페이지의 `root_path`는 터미널에서 `rake routes`로 확인 할 수 있습니다.
+이 때 `root_path`와 같은 각 페이지의 별칭은 터미널에서 `rake routes`로 확인 할 수 있습니다.
 ## 이미지 삽입
 ### html
 `<img src="images/logo.png">`
@@ -50,12 +50,21 @@ rails에서의 view 작업 시 유의사항
 `<%= image_tag "logo.png">`
 
 `image_tag`를 쓰지 않으면 rails가 이미지 이름 뒤에 임의로 생성해 붙인 hash코드를 읽을 수 없어요 ㅠㅠ
+
+#### class나 id 같은 속성 삽입이 필요하면?
+`<%= image_tag "logo.png", class: "logo", id: "farmfarm-logo", alt: "팜팜멘토 로고">`
 ### css
 `background:url('../images/bg.png');`
 
 `background:asset-url('bg.png');`
 
 `url`대신 `asset-url`을 쓰지 않으면 rails가 이미지 이름 뒤에 임의로 생성해 붙인 hash코드를 읽을 수 없어요 ㅠㅠ
+### js
+`origsrc.attr('src', 'images/droppointer-up.png');`
+
+`origsrc.attr('src', '<%= asset_path("droppointer-up.png") %>');`
+
+위와 같이 `asset_path` 로 이미지를 걸어주세요. 또한 해당 js파일은 확장자를 *.js.erb로 변경해주세요.
 ## html에 이미지 링크 걸 때는?
 `<a href="/"><img src="image/logog.png"></a>`
 
