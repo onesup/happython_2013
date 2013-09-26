@@ -36,26 +36,22 @@ namespace :deploy do
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
   after "deploy:setup", "deploy:setup_config"
-
-  task :upload_facebook_parameters do
-    origin_file = "config/facebook.yml"
-    destination_file = shared_path + "/config/facebook.yml" # Notice the
-    shared_path
-
-    try_sudo "mkdir -p #{File.dirname(destination_file)}"
-    top.upload(origin_file, destination_file)
-  end
   
-  task :upload_email_parameters do
+  task :upload_parameters do
     origin_file = "config/email.yml"
-    destination_file = shared_path + "/config/email.yml" # Notice the
+    puts origin_file
+    destination_file = "#{shared_path}/config/email.yml" # Notice the
     shared_path
-
-    try_sudo "mkdir -p #{File.dirname(destination_file)}"
+    run "mkdir -p #{File.dirname(destination_file)}"
     top.upload(origin_file, destination_file)
+    origin_file = "config/facebook.yml"
+    destination_file = shared_path + "#{shared_path}/config/facebook.yml" # Notice the
+    shared_path
+    run "mkdir -p #{File.dirname(destination_file)}"
+    top.upload(origin_file, destination_file)
+    
   end
-  after "deploy:setup", "deploy:upload_facebook_parameters"
-  after "deploy:setup", "deploy:upload_email_parameters"
+  before "deploy:setup", "deploy:upload_parameters"
 
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
@@ -72,11 +68,11 @@ namespace :deploy do
   end
   
   desc "Make symlink for custom config yaml"
-  task :create_symlink do
+  task :symlink_parameters do
     run "ln -nfs #{shared_path}/config/facebook.yml #{latest_release}/config/facebook.yml"
     run "ln -nfs #{shared_path}/config/email.yml #{latest_release}/config/email.yml"
   end
-  after "deploy:finalize_update", "deploy:create_symlink"
+  after "deploy:finalize_update", "deploy:symlink_parameters"
   
   before "deploy", "deploy:check_revision"
 end
