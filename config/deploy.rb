@@ -62,11 +62,6 @@ namespace :deploy do
     end
   end
   
-  desc "reload the database with seed data"
-  task :seed do
-    run "cd #{current_path}; RAILS_ENV=#{rails_env}; rake db:seed RAILS_ENV=#{rails_env}"
-  end
-  
   desc "Make symlink for custom config yaml"
   task :symlink_parameters do
     run "ln -nfs #{shared_path}/config/facebook.yml #{latest_release}/config/facebook.yml"
@@ -75,6 +70,18 @@ namespace :deploy do
   after "deploy:finalize_update", "deploy:symlink_parameters"
   
   before "deploy", "deploy:check_revision"
+end
+
+namespace :db do
+  desc "reload the database with seed data"
+  task :reset do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env}; rake db:migrate:reset RAILS_ENV=#{rails_env}"
+  end
+  
+  task :seed do
+    run "cd #{current_path}; RAILS_ENV=#{rails_env}; rake db:seed RAILS_ENV=#{rails_env}"
+  end
+  
 end
 
 
