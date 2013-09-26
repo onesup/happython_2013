@@ -13,6 +13,16 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="./assets/jsapi"></script>
+  <script>
+   google.load( "webfont", "1" );
+   google.setOnLoadCallback(function() {
+    WebFont.load({ custom: {
+     families: [ "NanumGothic" ],
+     urls: [ "http://fontface.kr/NanumGothic/css" ]
+    }});
+   });
+  </script>
 </head>
 <body>
   <div id="page">
@@ -44,13 +54,10 @@
           <p class="flash_alert"><%= alert %></p>
         </div>
         <%= yield %>
+        <%= link_to "관리자영역", admin_roles_path %>
       </div>
     </div>
   </div>
-
-<footer>
-  <%= link_to "관리자영역", admin_roles_path %>
-</footer>
 </body>
 </html>
 
