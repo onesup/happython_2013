@@ -30,6 +30,37 @@ localhost:3000 을 개발 서버 주소로 사용 가능하다면 3번 과정과
 ## 서버 실행
 `rails s`
 
+rails에서의 view 작업 시 유의사항
+============================
+
+## 링크 삽입
+### 외부링크
+`<a href="http://google.com">구글</a>`
+
+`<%= link_to "구글", "http://google.com" >`
+### 내부 링크
+`<a href="/">첫화면으로</a>`
+
+`<%= link_to "첫화면으로", "root_path" >`
+이 때 각 페이지의 `root_path`는 터미널에서 `rake routes`로 확인 할 수 있습니다.
+## 이미지 삽입
+### html
+`<img src="images/logo.png">`
+
+`<%= image_tag "logo.png">`
+
+`image_tag`를 쓰지 않으면 rails가 이미지 이름 뒤에 임의로 생성해 붙인 hash코드를 읽을 수 없어요 ㅠㅠ
+### css
+`background:url('../images/bg.png');`
+
+`background:asset-url('bg.png');`
+
+`url`대신 `asset-url`을 쓰지 않으면 rails가 이미지 이름 뒤에 임의로 생성해 붙인 hash코드를 읽을 수 없어요 ㅠㅠ
+## html에 이미지 링크 걸 때는?
+`<a href="/"><img src="image/logog.png"></a>`
+
+`<%= link_to image_tag("main_logo.png"), root_path %>`
+
 모델간 관계
 ========
 ## user, job 모델 설명

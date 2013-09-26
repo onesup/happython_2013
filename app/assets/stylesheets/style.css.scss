@@ -400,7 +400,7 @@ body{
 	border:none;
 
 	overflow: hidden;
-	background: url('button_send.png') no-repeat;
+	background: asset-url('button_send.png') no-repeat;
 }
 .form-wrapper .form-row .form-submit input:hover {
 	cursor: pointer;
