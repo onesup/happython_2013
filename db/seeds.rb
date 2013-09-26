@@ -1,5 +1,6 @@
 User.destroy_all
 admin = User.create!(email:'admin@farmfarmmentor.org', password:'12341234')
+admin.confirm!
 Role.destroy_all
 role = Role.create!(
   name: :admin,
