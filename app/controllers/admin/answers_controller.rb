@@ -1,4 +1,5 @@
 class Admin::AnswersController < ApplicationController
+  layout 'admin'
   def index
   end
 

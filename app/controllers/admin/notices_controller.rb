@@ -1,4 +1,5 @@
 class Admin::NoticesController < ApplicationController
+  layout 'admin'
   def index
   end
 

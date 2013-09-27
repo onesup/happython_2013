@@ -1,4 +1,5 @@
 class Admin::JobsController < ApplicationController
+  layout 'admin'
   def index
   end
 
