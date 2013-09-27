@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.string :title
       t.text :contents
-
+      t.references :user, index: true
       t.timestamps
     end
   end

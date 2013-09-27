@@ -1,0 +1,11 @@
+<h1>Admin::Reviews#index</h1>
+<ul>
+  <li><%= link_to "관리자메뉴로", admin_path %></li>
+  <li><%= link_to "새로만들기", new_admin_review_path %></li>
+</ul>
+<ul>
+  <% @reviews.each do |review| %>
+    <li><%= link_to review.title, edit_admin_review_path(review) %></li>
+  <% end %>
+</ul>
+

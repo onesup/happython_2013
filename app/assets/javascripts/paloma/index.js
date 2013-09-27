@@ -6,3 +6,7 @@
 //= require ./reviews/_manifest.js
 //= require ./dashboard/_manifest.js
 //= require ./questions/_manifest.js
+//= require ./users/_manifest.js
+//= require ./jobs/_manifest.js
+//= require ./answers/_manifest.js
+//= require ./notices/_manifest.js
