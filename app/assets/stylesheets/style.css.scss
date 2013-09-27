@@ -36,9 +36,11 @@ html,body{
 	height:100%;
 }
 body{
-	background:url('../images/bg.png');
+	background:asset-url('bg.png');
 }
 /*=========================================*/
+
+
 
 /*========= Main Layout Style =========*/
 #page{
