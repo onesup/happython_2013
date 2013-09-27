@@ -3,3 +3,9 @@
   <li><%= link_to "관리자메뉴로", admin_path %></li>
   <li><%= link_to "새로만들기", new_admin_notice_path %></li>
 </ul>
+<ul>
+  <% @notices.each do |notice| %>
+    <li><%= link_to notice.title, edit_admin_notice_path(notice) %></li>
+  <% end %>
+</ul>
+
