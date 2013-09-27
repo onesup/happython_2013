@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :job do
-    title "MyString"
+    title "사과수확"
     description "MyText"
   end
 end

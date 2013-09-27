@@ -74,7 +74,8 @@ javascript 파일 다루기
 ===================
 Rails는 웹페이지 로딩 속도 향상을 위해 Asset Pipeline 이란 기능을 도입했습니다.
 프로젝트에 삽입되는 모든 style sheet 파일과 javascript 파일을 최소화하고 압축해 각각을 하나의 파일로 만들어 로딩 속도를 최적화합니다. 문제는 **하나의** 파일에 모든 js 파일이 합쳐지다보니 namespace 문제가 생길 수 있다는 것입니다.
-예를들어 `home/index`와 `faq/index` 양쪽에서 js를 로딩하기 위해 ``$(document).ready`를 사용하는 경우 각각의 파일이 하나의 파일로 합쳐져 overloading 되어버립니다. `home/index`에서는 슬라이더가 휙휙 도는데, `faq/index`에서는 펼침 박스가 열리지 않는 문제가 발생합니다. 이를 방지하기 위해 본 프로젝트에서는 `paloma gem`을 사용하여 js파일을 관리합니다.
+예를들어 `home/index`와 `faq/index` 양쪽에서 js를 로딩하기 위해 `$(document).ready`를 사용하는 경우 각각의 파일이 하나의 파일로 합쳐져 overloading 되어버립니다. `home/index`에서는 슬라이더가 휙휙 도는데, `faq/index`에서는 펼침 박스가 열리지 않는 문제가 발생합니다. 이를 방지하기 위해 본 프로젝트에서는 `paloma gem`을 사용하여 js파일을 관리합니다.
+
 1. js 파일의 이름은 `index`, `show`, `edit`, `new`와 같은 액션의 이름으로 지정합니다.
 2. 생성한 js파일은 `app/assets/javascripts/paloma/{controller}` 안으로 넣어둡니다.
 3. `home/index` 에서 쓰이는 `index.js` 파일의 경로는 `app/assets/javascripts/paloma/home/index.js` 입니다.
