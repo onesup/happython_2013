@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913163424) do
+ActiveRecord::Schema.define(version: 20130927175002) do
+
+  create_table "answers", force: true do |t|
+    t.string   "title"
+    t.text     "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "applications", force: true do |t|
     t.integer  "mentee_id"
@@ -22,8 +29,8 @@ ActiveRecord::Schema.define(version: 20130913163424) do
     t.datetime "updated_at"
   end
 
-  add_index "applications", ["job_id"], name: "index_applications_on_job_id", using: :btree
-  add_index "applications", ["mentee_id"], name: "index_applications_on_mentee_id", using: :btree
+  add_index "applications", ["job_id"], name: "index_applications_on_job_id"
+  add_index "applications", ["mentee_id"], name: "index_applications_on_mentee_id"
 
   create_table "jobs", force: true do |t|
     t.integer  "mentor_id"
@@ -33,7 +40,29 @@ ActiveRecord::Schema.define(version: 20130913163424) do
     t.datetime "updated_at"
   end
 
-  add_index "jobs", ["mentor_id"], name: "index_jobs_on_mentor_id", using: :btree
+  add_index "jobs", ["mentor_id"], name: "index_jobs_on_mentor_id"
+
+  create_table "notices", force: true do |t|
+    t.string   "title"
+    t.text     "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.text     "contents"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", force: true do |t|
+    t.string   "title"
+    t.text     "contents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name",        null: false
@@ -72,9 +101,9 @@ ActiveRecord::Schema.define(version: 20130913163424) do
     t.string   "uid"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
 
 end

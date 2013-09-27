@@ -6,6 +6,8 @@
 
 /config/facebook.yml
 /config/email.yml
+/db/schema.rb
+
 # Ignore bundler config.
 /.bundle
 

@@ -5,3 +5,4 @@
 //= require ./faq/_manifest.js
 //= require ./reviews/_manifest.js
 //= require ./dashboard/_manifest.js
+//= require ./questions/_manifest.js
