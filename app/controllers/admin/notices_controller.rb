@@ -1,6 +1,7 @@
 class Admin::NoticesController < ApplicationController
   layout 'admin'
   def index
+    @notice = Notice.all
   end
 
   def show
