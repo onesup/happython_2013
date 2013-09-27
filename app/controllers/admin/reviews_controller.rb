@@ -19,6 +19,7 @@ class Admin::ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @user = User.all
   end
 
   # POST /reviews
@@ -69,6 +70,6 @@ class Admin::ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :contents)
+      params.require(:review).permit(:title, :contents, :user_id)
     end
 end

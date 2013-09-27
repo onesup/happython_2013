@@ -66,9 +66,12 @@ ActiveRecord::Schema.define(version: 20130927212619) do
   create_table "reviews", force: true do |t|
     t.string   "title"
     t.text     "contents"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name",        null: false

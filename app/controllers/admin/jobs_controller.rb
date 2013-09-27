@@ -16,10 +16,12 @@ class Admin::JobsController < ApplicationController
   # GET /jobs/new
   def new
     @job = Job.new
+    @users = User.all
   end
 
   # GET /jobs/1/edit
   def edit
+    @users = User.all
   end
 
   # POST /jobs
@@ -70,6 +72,6 @@ class Admin::JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:category, :title, :content, :time, :level, :workers_count, :pay, :address)
+      params.require(:job).permit(:category, :title, :content, :time, :level, :workers_count, :pay, :address, :mentor_id)
     end
 end
