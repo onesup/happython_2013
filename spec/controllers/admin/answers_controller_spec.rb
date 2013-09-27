@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::QuestionsController do
+describe Admin::AnswersController do
 
   describe "GET 'index'" do
     it "returns http success" do
