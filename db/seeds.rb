@@ -14,3 +14,9 @@ puts "Admin role created"
 
 User.first.update( role: Role.with_name(:admin) )
 puts "created #{User.first.email} and that made administer"
+
+jobs = ["사과 수확","배 수확","포도 수확","복숭아 수확","멜론 수확","깻잎 수확","호박 수확","옥수수 수확"]
+jobs.each do |job|
+  Job.create(title: job)
+  puts Job.last.title
+end
