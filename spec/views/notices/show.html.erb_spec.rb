@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "reviews/show" do
+describe "notices/show" do
   before(:each) do
-    @review = assign(:review, stub_model(Review,
+    @notice = assign(:notice, stub_model(Notice,
       :title => "Title",
       :contents => "MyText"
     ))

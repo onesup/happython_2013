@@ -1,10 +1,11 @@
 require 'spec_helper'
 
-describe "reviews/show" do
+describe "questions/show" do
   before(:each) do
-    @review = assign(:review, stub_model(Review,
+    @question = assign(:question, stub_model(Question,
       :title => "Title",
-      :contents => "MyText"
+      :contents => "Contents",
+      :email => "Email"
     ))
   end
 
@@ -12,6 +13,7 @@ describe "reviews/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Title/)
-    rendered.should match(/MyText/)
+    rendered.should match(/Contents/)
+    rendered.should match(/Email/)
   end
 end
