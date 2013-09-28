@@ -18,15 +18,7 @@
 //= require jquery.bxslider.min
 //= require jquery-ui-1.10.3.custom.min
 
-$(document).ready(function() {
-	// Family Site link event function
-	$("#footer-familysite").bind("change", function() {
-		console.log("dd");
-		var anchor = $(this).find(":selected").val();
-		if(anchor == "http://www.gosunchang.com/" || anchor == "http://www.refarm.org/") {
-			window.open(anchor, "popupWindow", "width=600,height=600,scrollbars=yes");
-		} else {
-			// Do-Nothing
-		}
-	});
-});
+(function() {
+	
+	
+})();

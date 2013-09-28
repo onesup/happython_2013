@@ -1,4 +1,14 @@
+function CloseJoinPopup() {
+	$("#join-popup").hide();
+}
+function JoinConfirm() {
+	if(confirm("참여하시겠습니까?")) {
+		alert("Somthing to do");
+	}
+	CloseJoinPopup();
+}
 function MoveMentorDetailView(position) {
+	$("#join-popup").hide();
 	var detailPosition = $("#mentor-detail-wrapper").index();
 	if(detailPosition<=position) {
 		position--;
@@ -101,6 +111,21 @@ function MoveMentorDetailView(position) {
 			$("#mentor-detail-wrapper").slideUp(500);
 			setTimeout("MoveMentorDetailView("+$(this).index()+")", 510);
 		}); 
+		
+		$(".mentor-category ul.category-tab li").click(function() {
+			$(".mentor-category ul.category-tab li").removeClass("selected")
+			$(this).addClass("selected");
+		});
+		
+		$("#detail-close").click(function() {
+			$("#join-popup").hide();
+			$("#mentor-detail-wrapper").slideUp(500);
+			$(".mentor-indicator.selected").hide();
+			$(".mentor-indicator.disabled").hide();
+		});
+		$("#join-btn").click(function() {
+			$("#join-popup").show();
+		});
     });
   };
 })();

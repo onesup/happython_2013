@@ -83,6 +83,46 @@
 		</div>
 	</div>
   </div>
+  <script>
+$(document).ready(function() {
+	// Family Site link event function
+	$("#footer-familysite").bind("change", function() {
+		console.log("dd");
+		var anchor = $(this).find(":selected").val();
+		if(anchor == "http://www.gosunchang.com/" || anchor == "http://www.refarm.org/") {
+			window.open(anchor, "popupWindow", "width=600,height=600,scrollbars=yes");
+		} else {
+			// Do-Nothing
+		}
+	});
+
+
+	$("#leftmenu-introduce img").mouseenter(function() {
+		$(this).attr("src", '/assets/leftmenu_introduce_over.png');
+	}).mouseleave(function() {
+		$(this).attr("src", '/assets/leftmenu_introduce.png');
+	});
+
+	$("#leftmenu-notice img").mouseenter(function() {
+		$(this).attr("src", '/assets/leftmenu_notice_over.png');
+	}).mouseleave(function() {
+		$(this).attr("src", '/assets/leftmenu_notice.png');
+	});
+
+	$("#leftmenu-review img").mouseenter(function() {
+		$(this).attr("src", '/assets/leftmenu_review_over.png');
+	}).mouseleave(function() {
+		$(this).attr("src", '/assets/leftmenu_review.png');
+	});
+
+	$("#leftmenu-faq img").mouseenter(function() {
+		$(this).attr("src", '/assets/leftmenu_faq_over.png');
+	}).mouseleave(function() {
+		$(this).attr("src", '/assets/leftmenu_faq.png');
+	});
+
+});
+  </script>
 </body>
 </html>
 
