@@ -30,16 +30,23 @@
       <div id="sidebar">
         <ul class="sidebar-menu">
           <li class="sidebar-menu-item main-logo">
-            <%= link_to image_tag("main_logo.png"), root_path %></a>
+            <%= link_to image_tag("logo.png"), root_path %></a>
           </li>
-          <li class="sidebar-menu-item">
-            <%= link_to image_tag("btn_menu_about.png"), root_path %></a>
+          <li class="sidebar-menu-item" id="leftmenu-introduce">
+            <%= link_to image_tag("leftmenu_introduce.png"), root_path %></a>
           </li>
-          <li class="sidebar-menu-item">
-            <%= link_to image_tag("btn_menu_epilogue.png"), root_path %></a>
+          <li class="sidebar-menu-item" id="leftmenu-notice">
+            <%= link_to image_tag("leftmenu_notice.png"), "notices" %></a>
           </li>
-          <li class="sidebar-menu-item">
-            <%= link_to image_tag("btn_menu_faq.png"), faq_index_path %></a>
+          <li class="sidebar-menu-item" id="leftmenu-review">
+            <%= link_to image_tag("leftmenu_review.png"), "reviews" %></a>
+          </li>
+          <li class="sidebar-menu-item" id="leftmenu-faq">
+            <%= link_to image_tag("leftmenu_faq.png"), "faq" %></a>
+          </li>
+		  
+          <li class="sidebar-menu-item banner">
+            <%= link_to image_tag("left_help_benner.png"), faq_index_path %></a>
           </li>
         </ul>
       </div>
@@ -47,7 +54,7 @@
         <div class="header">
           <ul class="header-menu">
             <li>
-              <a href="#"><%= render 'layouts/shared/main_nav' %></a>
+				<%= link_to image_tag("top_facebook_btn.png")%>
             </li>
           </ul>
           <p class="flash_notice"><%= notice %></p>
@@ -56,6 +63,12 @@
         <%= yield %>
       </div>
     </div>
+	<div id="footer">
+		<div id="footer-content">
+			<%= image_tag "footer_copy.png", id:"footer-copy"%>
+			<%= image_tag "footer_policy.png", id:"footer-policy"%>
+		</div>
+	</div>
   </div>
 </body>
 </html>
