@@ -8,11 +8,7 @@
 * You're free to add application-wide styles to this file and they'll appear at the top of the
 * compiled file, but it's generally better to create a new file per style scope.
 *
-*= require_self
-*= require_tree .
 *= require font-awesome
 *= require summernote
-* 아래 stub는 assets/stylesheets/the_role 안의 stylesheet는 제외하는 코드
-*= stub ./the_role.css
-*= stub ./the_role/bootstrap_sass.css.scss
+*= require bootstrap_and_override
 */
