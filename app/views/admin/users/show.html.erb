@@ -24,7 +24,9 @@
                     <div class="control-group warning">
                       <label class="control-label" for="selectError">권한그룹</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input"><%= @user.role.name %></span>
+                        <span class="input-xlarge uneditable-input">
+                          <%= @user.role.name unless @user.role.nil? %>
+                        </span>
                       </div>
                     </div>
 
@@ -69,18 +71,20 @@
                         </div>
                       </div>
                     </div>
-
-                    <div class="control-group">
-                      <label class="control-label">Facebook Url</label>
-                      <div class="controls">
-                        <span class="">https://facebook.com/profile.php?id=000000</span>
+                    <% unless @user.uid.nil? %>
+                      <div class="control-group">
+                        <label class="control-label">Facebook Url</label>
+                        <div class="controls">
+                          <span class="">
+                            <%= "https://facebook.com/profile.php?id=" + @user.uid %>
+                          </span>
+                        </div>
                       </div>
-                    </div>
-
+                    <% end %>
                     <div class="control-group">
                       <label class="control-label">가입일시</label>
                       <div class="controls">
-                        <span class="">2013-10-01 19:22:35</span>
+                        <span class=""><%= @user.created_at %></span>
                       </div>
                     </div>
 

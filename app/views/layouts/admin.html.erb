@@ -129,10 +129,10 @@
                 </div>
                 <!--/span-->
                 <div class="span9" id="content">
-                  
-                  <p class=""><%= notice %></p>
-                  <p class=""><%= alert %></p>
-
+                  <div>
+                    <p class="flash_notice"><%= notice %></p>
+                    <p class="flash_alert"><%= alert %></p>
+                  </div>
                   <%= yield %>
                 </div>
             </div>
