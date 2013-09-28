@@ -1,5 +1,49 @@
-<h1>New review</h1>
 
-<%= render 'form' %>
+<div class="page-title">
+  <div class="page-icon">
+	  <%= image_tag "review_icon.png"%>
+  </div>
+  <div class="title-name">
+    <%=image_tag "review/title_review_w.png"%>
+  </div>
+</div>
 
-<%= link_to 'Back', reviews_path %>
+<div class="blank">
+  <%= image_tag "review/label_review_w.png" %>
+</div>
+
+<div class="wrapper">
+  <div class="reviewsWrite">
+    <br />
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="130">후기작성 선택</td>
+        <td>
+          <select name="">
+            <option value="">김팜팜 멘토의 유기농 벼농사 방법</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>제목</td>
+        <td>
+          <input type="text" style="width:380px;" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="textarea">
+          <textarea name="" style="width:100%; height:300px;"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="submit">
+          <input type="image" src="/assets/review/btn_submit.png" />
+          <%= image_tag "review/btn_cancel.png" %>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <div class="clear"></div>
+  </div>
+</div>   
+

@@ -12,7 +12,7 @@ Kfarm::Application.routes.draw do
     resources :users
   end
   resources :faq, :only => [:index]
-  resources :reviews, :only => [:index, :show]
+  resources :reviews, :only => [:index, :show, :new, :create]
   resources :notices, :only => [:index, :show]
   resources :answers, :only => [:index, :show]
   resources :questions

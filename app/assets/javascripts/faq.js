@@ -1,4 +1,3 @@
-/*
 $(document).ready(function() {
   // 상세보기
   $('div.faq_wrapper > ul.list > li').click(function() {
@@ -7,4 +6,3 @@ $(document).ready(function() {
   });
 
 });
-*/

@@ -21,7 +21,7 @@ div.faq_wrapper ul.list li {
   display: inline-block;
   width: 100%;
   background-color: #ffffff;
-  margin-top: -4px;
+  margin-top: -5px;
   cursor: pointer;
 }
 
@@ -43,6 +43,7 @@ div.faq_wrapper ul.list li span.label {
   color: #fff;
   text-align: center;
   padding: 8px;
+  line-height: 20px;
 }
 
 div.faq_wrapper ul.list li span.title {
@@ -71,7 +72,7 @@ div.faq_wrapper ul.list li span.down {
 
 div.faq_wrapper ul.list li span.detail {
   display: none;
-  width: 800px;
+  width: 797px;
   background-color: #7B7B7B;
   font-family: "NanumGothic", '나눔고딕', 'NanumGothicWeb';
   font-size: 10pt;
