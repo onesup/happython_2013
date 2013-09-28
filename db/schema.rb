@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928112535) do
+ActiveRecord::Schema.define(version: 20130928225259) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20130928112535) do
 
   add_index "applications", ["job_id"], name: "index_applications_on_job_id"
   add_index "applications", ["mentee_id"], name: "index_applications_on_mentee_id"
+
+  create_table "banners", force: true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.string   "contents"
+    t.string   "banner_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "jobs", force: true do |t|
     t.integer  "mentor_id"
