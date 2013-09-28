@@ -58,6 +58,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -189,6 +193,7 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
+    rb-readline (0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec (2.14.1)
@@ -258,6 +263,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.3.2.2)
   capistrano!
   capybara
+  carrierwave
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise (~> 3.1.0)
@@ -274,6 +280,7 @@ DEPENDENCIES
   paloma
   pry
   rails (= 4.0.0)
+  rb-readline (~> 0.5.0.pre.1)
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
