@@ -26,6 +26,7 @@
                   <td class="center"><%= user.phone %></td>
                   <td class="center"><%= user.created_at %></td>
                   <td class="center">
+                    <%= link_to "상세정보", admin_user_path(user) %>
                     <%= link_to "수정", edit_admin_user_path(user) %>
                     <%= link_to "삭제", admin_user_path(user), method: :delete, confirm: "삭제 OK?" %>
                   </td>
