@@ -87,7 +87,7 @@
                     <div class="form-actions">
                       <%= link_to "정보수정", edit_admin_user_path(@user), class: "btn btn-primary"%>
                       <!-- <button type="submit" class="btn btn-primary">Modify</button> -->
-                      <button type="reset" class="btn">Back</button>
+                      <%= link_to "사용자 전체 목록", admin_users_path, class: "btn"%>
                     </div>
                   </fieldset>
                 </form>
