@@ -1,4 +1,8 @@
 Kfarm::Application.routes.draw do
+  get "banners/index"
+  get "banners/show"
+  get "banners/edit"
+  get "banners/new"
   resources :jobs
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
@@ -10,6 +14,7 @@ Kfarm::Application.routes.draw do
     resources :questions
     resources :reviews
     resources :users
+    resources :banners
   end
   resources :faq, :only => [:index]
   resources :reviews, :only => [:index, :show]
