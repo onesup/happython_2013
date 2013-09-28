@@ -395,3 +395,76 @@
 	font-size: 20px;
 	color: #666666;
 }
+
+
+#ui-datepicker-div {
+	width:193px;
+	background: #333333;
+	margin-left: -69px;
+	margin-top: 54px;
+	border: 1px solid #fff;
+}
+
+.ui-datepicker-calendar {
+	width: 177px;
+	margin: 8px;
+}
+.ui-datepicker-title {
+	margin-top: 8px;
+	color: #fff;
+	text-align: center;
+	font-family: "NanumGothic";
+	font-size: 11px;
+}
+.ui-datepicker-calendar td {
+	text-align: center;
+	width: 24px;
+}
+.ui-datepicker-calendar th {
+	text-align: center;
+	color: #fff;
+	width: 24px;
+	color: #fff;
+	font-family: "NanumGothic";
+	font-size: 11px;
+}
+.ui-datepicker-calendar td a {
+	color: #fff;
+	font-family: "NanumGothic";
+	font-size: 11px;
+}
+.ui-datepicker-calendar td a:hover {
+	color: #fff;
+	text-decoration: none; 
+}
+.ui-datepicker-calendar td {
+	border: 1px solid #fff;
+}
+.ui-datepicker-calendar td:hover {
+	background: #fff;
+	cursor: pointer;
+}
+.ui-datepicker-calendar td:hover a {
+
+	color: #333;
+}
+
+.ui-datepicker-prev.ui-corner-all {
+	margin-left:8px;
+	float: left;
+	color: #fff;
+	font-family: "NanumGothic";
+	font-size: 11px;
+	
+}
+.ui-datepicker-next.ui-corner-all {
+	margin-right: 8px;
+	float: right;
+	color: #fff;
+	font-family: "NanumGothic";
+	font-size: 11px;
+}
+.ui-datepicker-prev.ui-corner-all:hover, .ui-datepicker-next.ui-corner-all:hover {
+	cursor: pointer;
+	text-decoration: none;
+}

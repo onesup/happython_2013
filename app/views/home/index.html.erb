@@ -111,23 +111,26 @@
 		
 		<div class="search-datepicker">
 			<div class="datepicker-custom">
-				<p><span>9</span>월 <span>24</span>일 ~ <span>10</span>월 <span>4</span>일</p>
+				<p><span id="today-month">9</span>월 <span id="today-date">24</span>일 ~ <span id="target-month">10</span>월 <span id="target-date">4</span>일</p>
 			</div>
 			<div class="datepicker-option">
 				<ul>
 					<li>
+						<input type="hidden" id="datepicker"/>
 						<%= image_tag "serach_calaendar_icon.png"%>
 					</li>
 					<li>
-						<%= image_tag "serach_7days_icon.png"%>
+						<%= image_tag "serach_7days_icon.png", onclick:"SetDateForSearch(7)"%>
 					</li>
 					<li>
-						<%= image_tag "serach_15days_icon.png"%>
+						<%= image_tag "serach_15days_icon.png", onclick:"SetDateForSearch(15)"%>
 					</li>
 					<li>
-						<%= image_tag "serach_month_icon.png"%>
+						<%= image_tag "serach_month_icon.png", onclick:"SetDateForSearch(30)"%>
 					</li>
 				</ul>
+				
+				<input type="hidden" name="date-target"value=""/>
 			</div>
 		</div>
 	</div>
@@ -855,3 +858,35 @@ Send invitation
 	</div>
 </div>
 
+<script>
+$(function() {
+    $.datepicker.regional['ko'] = {
+     closeText: '닫기',
+     prevText: '이전달',
+     nextText: '다음달',
+     currentText: '오늘',
+     monthNames: ['1월','2월','3월','4월','5월','6월',
+     '7월','8월','9월','10월','11월','12월'],
+     monthNamesShort: ['1월','2월','3월','4월','5월','6월',
+     '7월','8월','9월','10월','11월','12월'],
+     dayNames: ['일','월','화','수','목','금','토'],
+     dayNamesShort: ['일','월','화','수','목','금','토'],
+     dayNamesMin: ['일','월','화','수','목','금','토'],
+     weekHeader: 'Wk',
+     dateFormat: 'yy-mm-dd',
+     firstDay: 0,
+     isRTL: false,
+     duration:200,
+     showAnim:'show',
+     showMonthAfterYear: true,
+     yearSuffix: '년'};
+         $.datepicker.setDefaults($.datepicker.regional['ko']);
+		 
+	$("#datepicker").datepicker({
+		showOn: "button",
+		buttonImage: "/assets/serach_calaendar_icon.png",
+		buttonImageOnly: true
+	});
+	
+});
+  </script>
