@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require "net/sftp"
 
 set :rails_env, "production" #added for delayed job
 set :application, "kfarm"
@@ -39,15 +40,12 @@ namespace :deploy do
   
   task :upload_parameters do
     origin_file = "config/email.yml"
-    puts origin_file
     destination_file = "#{shared_path}/config/email.yml"
-    shared_path
-    run "mkdir -p /#{File.dirname(destination_file)}"
+    run "mkdir -p #{File.dirname(destination_file)}"
     top.upload(origin_file, destination_file)
     origin_file = "config/facebook.yml"
-    destination_file = shared_path + "#{shared_path}/config/facebook.yml"
-    shared_path
-    run "mkdir -p /#{File.dirname(destination_file)}"
+    destination_file = "#{shared_path}/config/facebook.yml"
+    run "mkdir -p #{File.dirname(destination_file)}"
     top.upload(origin_file, destination_file)
     
   end
@@ -70,6 +68,18 @@ namespace :deploy do
   after "deploy:finalize_update", "deploy:symlink_parameters"
   
   before "deploy", "deploy:check_revision"
+end
+
+namespace :assets do
+
+  desc "upload admin theme"
+  task :upload_theme do
+    # sftp = Net::SFTP.start("localhost", "daul")
+    origin_file = "app/assets/themes"
+    destination_file = "#{shared_path}/assets"
+    # sftp.upload(origin_file, destination_file)
+    top.upload(origin_file, destination_file, :via => :scp, :recursive => true)
+  end
 end
 
 namespace :db do
