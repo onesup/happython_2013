@@ -32,19 +32,15 @@
                       <% end %>
                     </td>
                     <td class="center"><%= job.category %></td>
-                    <% unless job.time.nil? %>
-                      <td class="center"><%= job.time["start"]%></td>
-                    <% else %>
-                      <td class="center">테스트용 데이터</td>
-                    <% end %>
-                    <td class="center">12시간</td>
-                    <td class="center">상중</td>
-                    <td class="center">5명</td>
-                    <td class="center">60,000원</td>
+                    <td class="center"><%= job.started_at%></td>
+                    <td class="center"><%= job.working_time %></td>
+                    <td class="center"><%= job.level %></td>
+                    <td class="center"><%= job.workers_count %></td>
+                    <td class="center"><%= job.pay %></td>
                     <td class="center">
-                      <a href="#">보기</a> 
-                      <a href="#">수정</a> 
-                      <a href="#">삭제</a> 
+                      <%= link_to "상세정보", admin_job_path(job) %>
+                      <%= link_to "수정", edit_admin_job_path(job) %>
+                      <%= link_to "삭제", admin_job_path(job), method: :delete, confirm: "삭제 OK?" %>
                       <a href="#">멘티</a>
                     </td>
                   </tr>

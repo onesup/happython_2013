@@ -4,7 +4,7 @@ class CreateJobs < ActiveRecord::Migration
       t.references :mentor, index: true
       t.string :category
       t.string :title
-      t.text :content
+      t.text :contents
       t.datetime :started_at
       t.datetime :finished_at
       t.integer :days

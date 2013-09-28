@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20130928112535) do
     t.integer  "mentor_id"
     t.string   "category"
     t.string   "title"
-    t.text     "content"
+    t.text     "contents"
     t.datetime "started_at"
     t.datetime "finished_at"
     t.integer  "days"
