@@ -1,59 +1,63 @@
-                    <div class="row-fluid">
-                        <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">후기 "이런후기 있어요" 정보 보기</div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-                                     <form class="form-horizontal">
-                                      <fieldset>
+<div class="row-fluid">
+    <!-- block -->
+    <div class="block">
+        <div class="navbar navbar-inner block-header">
+            <div class="muted pull-left">후기 "<%= @review.title%>" 정보 보기</div>
+        </div>
+        <div class="block-content collapse in">
+            <div class="span12">
+                 <form class="form-horizontal">
+                  <fieldset>
 
-                                        <div class="control-group">
-                                          <label class="control-label" for="focusedInput">제목</label>
-                                          <div class="controls">
-                                            <span class="input-xlarge uneditable-input">이런후기 있어요</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label">내용</label>
-                                          <div class="controls">
-                                            <span class="input-xlarge uneditable-input">이런 후기가 있네요. </span>
-                                          </div>
-                                        </div>
-
-                                        <div class="control-group">
-                                          <label class="control-label">등록일시</label>
-                                          <div class="controls">
-                                            <span class="">2013-10-01 19:22:35</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label">등록회원정보</label>
-                                          <div class="controls">
-                                            <span class=""><a href="#회원정보보기링크">ClaudeYun</a></span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label">해당 멘토링</label>
-                                          <div class="controls">
-                                            <span class=""><a href="#멘토링보기링크">가을 전격 농활 체험</a></span>
-                                          </div>
-                                        </div>
-
-                                        <div class="form-actions">
-                                          <button type="submit" class="btn btn-primary">Modify</button>
-                                          <button type="reset" class="btn">Back</button>
-                                        </div>
-                                      </fieldset>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
+                    <div class="control-group">
+                      <label class="control-label" for="focusedInput">제목</label>
+                      <div class="controls">
+                        <span class="input-xlarge uneditable-input">
+                          <%= @review.title%>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">내용</label>
+                      <div class="controls">
+                        <span class="input-xlarge uneditable-input"><%= @review.contents %></span>
+                      </div>
                     </div>
 
-
-<h1>Admin::Reviews#show</h1>
-<p>Find me in app/views/admin/reviews/show.html.erb</p>
+                    <div class="control-group">
+                      <label class="control-label">등록일시</label>
+                      <div class="controls">
+                        <span class=""><%= @review.created_at %></span>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">등록회원정보</label>
+                      <div class="controls">
+                        <% unless @review.user.nil? %>
+                          <span class="">
+                            <%= link_to @review.user.email, ademin_user_path(@review.user) %>
+                          </span>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label">해당 멘토링</label>
+                      <div class="controls">
+                        <% unless @review.user.nil? %>
+                          <span class="">
+                            <%= link_to @review.user.email, ademin_user_path(@review.user) %>
+                          </span>
+                        <% end %>
+                      </div>
+                    </div>
+                    <div class="form-actions">
+                      <%= link_to "목록으로", admin_reviews_path, class: "btn"%>
+                      <%= link_to "수정", edit_admin_review_path(@review), class: "btn btn-primary"%>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /block -->
+</div>
