@@ -4,6 +4,9 @@ class CreateJobs < ActiveRecord::Migration
       t.references :mentor, index: true
       t.string :category
       t.string :title
+      t.string :address
+      t.string :location
+      t.string :level
       t.text :contents
       t.datetime :started_at
       t.datetime :finished_at
@@ -12,12 +15,8 @@ class CreateJobs < ActiveRecord::Migration
       t.integer :finish_time
       t.integer :working_time
       t.integer :learning_time
-      t.string :level
       t.integer :workers_count
       t.integer :pay
-      t.string :address
-      t.string :plays
-
       t.timestamps
     end
   end

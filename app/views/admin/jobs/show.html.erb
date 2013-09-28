@@ -25,43 +25,43 @@
                     <div class="control-group">
                       <label class="control-label" for="date01">일정</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input">02/16/12</span>
+                        <span class="input-xlarge uneditable-input"><%= @job.started_at %></span>
                         ~
-                        <span class="input-xlarge uneditable-input">02/16/12</span>
+                        <span class="input-xlarge uneditable-input"><%= @job.finished_at %></span>
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label">교육시간</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input">12</span> 시간
+                        <span class="input-xlarge uneditable-input"><%= @job.learning_time %></span> 시간
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label" for="selectError">난이도</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input">상</span>
+                        <span class="input-xlarge uneditable-input"><%= @job.level %></span>
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label" for="focusedInput">필요인원</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input">4</span> 명
+                        <span class="input-xlarge uneditable-input"><%= @job.workers_count %></span> 명
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label" for="focusedInput">일당</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input">70,000</span> 원
+                        <span class="input-xlarge uneditable-input"><%= @job.pay %></span> 원
                       </div>
                     </div>
                     <div class="control-group">
                       <label class="control-label" for="focusedInput">장소</label>
                       <div class="controls">
-                        <span class="input-xlarge uneditable-input">농촌 어딘가..</span>
+                        <span class="input-xlarge uneditable-input"><%= @job.location %></span>
                       </div>
                     </div>
                     
-                    <legend>확장정보</legend>
+                    <!-- <legend>확장정보</legend>
                     <div class="control-group">
                       <label class="control-label">멘토링 내용</label>
                       <div class="controls">
@@ -71,13 +71,13 @@
                     <div class="control-group">
                       <label class="control-label">지도</label>
                       <div class="controls">
-                      	<div id="map" style="width:600px;height:400px;"></div>
+                        <div id="map" style="width:600px;height:400px;"></div>
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-actions">
-                      <button type="submit" class="btn btn-primary">Modify</button>
-                      <button type="reset" class="btn">Back</button>
+                      <%= link_to "목록으로", admin_jobs_path, class: "btn"%>
+                      <%= link_to "수정", edit_admin_job_path(@job), class: "btn btn-primary"%>
                     </div>
                   </fieldset>
                 </form>
@@ -99,7 +99,7 @@
 <script src="/assets/vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
 <script src="/assets/vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
 <script src="/assets/vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
-<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=405db4a3478f2fe559fd2b2d0d27856af183eb07" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=405db4a3478f2fe559fd2b2d0d27856af183eb07" charset="utf-8"></script> -->
 <script type="text/javascript">
 var map;
 var startLat = 37.5374;
