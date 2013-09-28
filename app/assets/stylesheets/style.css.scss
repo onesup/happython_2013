@@ -158,15 +158,34 @@ a:hover {
 
 #footer #footer-content {
 	width: 1024px;
-	padding: 20px 0;
-	margin: 0 auto;
+	margin: 20px auto;
+}
+#footer #footer-content:after {
+	content: "";
+	clear: both;
+	display: block;
 }
 #footer #footer-copy {
 	float: left;
 }
 #footer #footer-policy {
 	float:right;
+	margin-right:12px;
+	margin-top:8px;
 }
+
+#footer #footer-familysite {
+	float: right;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	width: 160px;
+	padding: 2px 4px;
+	font-size: 11px;
+	line-height: 1;
+	height: 25px;
+}
+	
 #footer #footer-policy:hover {
 	cursor: pointer;
 }
@@ -258,7 +277,7 @@ a:hover {
 
 #content .today-prog .prog-list .prog-list-item .prog-date{
 	color:#717171;
-	font-size:0.7em;
+	font-size:11px;
 	word-spacing:-0.1em;
 	margin-bottom:3px;
 }
@@ -269,7 +288,7 @@ a:hover {
 
 #content .today-prog .prog-list .prog-list-item .prog-subject{
 	color:#fff;
-	font-size:0.8em;
+	font-size:12px;
 	letter-spacing:-0.1em;
 	word-spacing:-0.1em;
 	margin-left:3px;

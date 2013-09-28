@@ -57,6 +57,9 @@
       <div id="safe-area">
         <div class="header">
           <ul class="header-menu">
+			  <li>
+			  	<%= link_to "관리자영역", admin_roles_path %>
+			  </li>
             <li>
 				<%= link_to image_tag("top_facebook_btn.png")%>
             </li>
@@ -70,6 +73,12 @@
 	<div id="footer">
 		<div id="footer-content">
 			<%= image_tag "footer_copy.png", id:"footer-copy"%>
+			
+			<select id="footer-familysite">
+				<option>FamilySite</option>
+				<option value="http://www.gosunchang.com/">순창군귀농귀촌지원센터</option>
+				<option value="http://www.refarm.org/">전국귀농운동본부</option>
+			</select>
 			<%= image_tag "footer_policy.png", id:"footer-policy"%>
 		</div>
 	</div>
