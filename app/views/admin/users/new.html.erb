@@ -1,2 +1,86 @@
+<div class="row-fluid">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">회원 등록</div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                     <form class="form-horizontal">
+                                      <fieldset>
+                                        <legend>기본정보</legend>
+                                        <div class="control-group">
+                                          <label class="control-label" for="focusedInput">이름</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label">이메일</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label">비밀번호</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge focused" id="focusedInput" type="password" value="">
+                                          </div>
+                                        </div>
+                                        <div class="control-group warning">
+                                          <label class="control-label" for="selectError">권한그룹</label>
+                                          <div class="controls">
+                                            <select id="selectError">
+                                              <option>관리자</option>
+                                              <option>멘토</option>
+                                              <option>회원</option>
+                                            </select>
+                                          </div>
+                                        </div>
+
+                                        <legend>멘토정보 (멘토그룹만 필요)</legend>
+                                        <div class="control-group">
+                                          <label class="control-label" for="focusedInput">주요작물</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                            <span class="help-inline">검색시 활용됨.</span>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label">소개글</label>
+                                          <div class="controls">
+                                            <textarea class="input-xlarge textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
+                                            <span class="help-inline">멘토정보에 포함됨.</span>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label">본인사진</label>
+                                          <div class="controls">
+                                            <div class="uploader hover" id="uniform-fileInput"><input class="input-file uniform_on" id="fileInput" type="file"><span class="filename" style="-webkit-user-select: none;">No file selected</span><span class="action" style="-webkit-user-select: none;">Choose File</span></div>
+                                            <span class="help-inline">메인페이지 표시.</span>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label">농장사진</label>
+                                          <div class="controls">
+                                            <div class="uploader hover" id="uniform-fileInput"><input class="input-file uniform_on" id="fileInput" type="file"><span class="filename" style="-webkit-user-select: none;">No file selected</span><span class="action" style="-webkit-user-select: none;">Choose File</span></div>
+                                            <span class="help-inline">멘토정보에 표시.</span>
+                                          </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                          <button type="submit" class="btn btn-primary">Register</button>
+                                          <button type="reset" class="btn">Cancel</button>
+                                        </div>
+                                      </fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+
 <h1>Admin::Users#new</h1>
 <%= render 'form' %>
