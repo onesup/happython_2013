@@ -1,7 +1,8 @@
 Kfarm::Application.routes.draw do
   resources :jobs
 
-  devise_for :users , controllers: { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
+  
   namespace :admin do
     resources :answers
     resources :jobs
