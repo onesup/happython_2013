@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928225259) do
+ActiveRecord::Schema.define(version: 20130928231702) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -126,6 +126,8 @@ ActiveRecord::Schema.define(version: 20130928225259) do
     t.string   "uid"
     t.string   "avatar"
     t.string   "farm"
+    t.string   "mentor_major"
+    t.text     "mentor_guide"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
