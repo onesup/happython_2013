@@ -33,18 +33,20 @@
                     </a>
                     <a class="brand" href="#">팜팜멘토</a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav pull-right">
-                            <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> 이수형 <i class="caret"></i>
-
-                                </a>
-                                <ul class="dropdown-menu">
-                                  <li>
-                                    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signout" %>
-                                  </li>
-                                </ul>
+                      <ul class="nav pull-right">
+                        <li class="dropdown">
+                          <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                            <% if user_signed_in? %>
+                              <i class="icon-user"></i><%= @user.email %><i class="caret"></i>
+                            <% end %>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signout" %>
                             </li>
-                        </ul>
+                          </ul>
+                        </li>
+                      </ul>
                         <ul class="nav">
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">회원<b class="caret"></b></a>
@@ -144,8 +146,6 @@
       <script src="/assets/vendors/jquery-1.9.1.js"></script>
       <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
       <script src="/assets/vendors/datatables/js/jquery.dataTables.min.js"></script>
-
-
       <script src="/assets/assets/scripts.js"></script>
       <script src="/assets/assets/DT_bootstrap.js"></script>
         <script>
