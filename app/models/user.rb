@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :applications, foreign_key: "mentee_id"
   has_many :reviews
   
+  mount_uploader :avatar, AvatarUploader
+  mount_uploader :farm, FarmUploader
+  
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user

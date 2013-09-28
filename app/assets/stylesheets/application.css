@@ -1,16 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- * 아래 stub는 assets/stylesheets/the_role 안의 stylesheet는 제외하는 코드
- *= stub ./the_role.css
- *= stub ./the_role/bootstrap_sass.css.scss
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*= require_tree .
+*= require font-awesome
+*= require summernote
+* 아래 stub는 assets/stylesheets/the_role 안의 stylesheet는 제외하는 코드
+*= stub ./the_role.css
+*= stub ./the_role/bootstrap_sass.css.scss
+*/

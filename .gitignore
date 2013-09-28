@@ -9,6 +9,7 @@
 /db/schema.rb
 /vendor/bundle/*
 /.ruby-version
+/public/uploads/*
 # Ignore bundler config.
 /.bundle
 

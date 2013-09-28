@@ -16,6 +16,9 @@
 //= require turbolinks
 //= require jcarousellite_1.0.1.min
 //= require jquery.bxslider.min
+//= require bootstrap.min.js
+//= require answers
+//= require summernote
 //= require jquery-ui-1.10.3.custom.min
 
 (function() {
