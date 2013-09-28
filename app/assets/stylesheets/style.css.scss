@@ -36,44 +36,79 @@ html,body{
 	height:100%;
 }
 body{
-	background:url('../images/bg.png');
+	background:asset-url('bg.png');
+}
+a:hover {
+	background: none;
 }
 /*=========================================*/
 
+
+
 /*========= Main Layout Style =========*/
 #page{
-	height:100%;
+	padding-bottom: 10px;
 }
-
+#page:after {
+	display: block;
+	clear: both;
+	content: "";
+}
 #sidebar{
-	position:fixed;
-	width:83px;
-	height:100%;
-	background:#202020;
+	float: left;
+	width:191px;
+	margin-right: 6px;
 }
 #sidebar .sidebar-menu{
 	width:100%;
 }
-#sidebar .sidebar-menu-item{
-	width:100%;
-	height:77px;
-	background:#373737;
-	border-bottom:1px solid #2a2a2a;
+#sidebar .sidebar-menu a:hover {
+	background: none;
 }
-#sidebar .main-logo{
-	height:102px;
-	background:#202020;
+
+#leftmenu-introduce img:hover {
+	background:asset-url('leftmenu_introduce_over.png');
+}
+#leftmenu-notice img:hover {
+	background:asset-url('leftmenu_notice_over.png');
+}
+#leftmenu-review img:hover {
+	background:asset-url('leftmenu_review_over.png');
+}
+#leftmenu-faq img:hover {
+	background:asset-url('leftmenu_faq_over.png');
+}
+#sidebar .sidebar-menu-item {
+	width:100%;
+	margin-bottom:3px;
+}
+#sidebar .sidebar-menu-item:hover {
+	background:none;
+}
+#sidebar .sidebar-menu-item .banner {
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+#sidebar .main-logo {
+	margin-top:49px;
+	margin-bottom: 6px;
+	height:46px;
 }
 
 #content{
-	position:relative;
-	width:919px;
-	height:4000px;
+	width:1024px;
 	margin:0 auto;
+}
+#content:after {
+	content: "";
+	clear: both;
+	display: block;
 }
 
 #content #safe-area{
-	margin-left:89px;
+	float:left;
+	width: 827px;
 }
 
 #content .header{
@@ -81,9 +116,14 @@ body{
 	height:35px;
 	padding:7px 0;
 }
+#content .header:after {
+	clear:both;
+	display:block;
+	content:"";
+}
 #content .header ul{
-	position:absolute;
-	right:0px;
+	margin-top:10px;
+	float:right;
 }
 #content .header ul li{
 	float:left;
@@ -104,11 +144,44 @@ body{
 	float:left;
 }
 
+#footer {
+	margin: 10px 0;
+	border-top: 2px solid #838383;
+	border-bottom: 2px solid #838383;
+}
+
+#footer:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#footer #footer-content {
+	width: 1024px;
+	padding: 20px 0;
+	margin: 0 auto;
+}
+#footer #footer-copy {
+	float: left;
+}
+#footer #footer-policy {
+	float:right;
+}
+#footer #footer-policy:hover {
+	cursor: pointer;
+}
+
+#footer {
+	margin: 10px 0;
+	border-top: 2px solid #838383;
+	border-bottom: 2px solid #838383;
+}
+
 /* ============================== */
 /* Notice Ticker Module CSS START */
 /* ============================== */
 .notice{
-	width:613px;
+	width:610px;
 	height:46px;
 	background:#39b875;
 	float:left;
@@ -123,21 +196,21 @@ body{
 	float:left;
 }
 .notice .notice-contents{
-	width:562px;
+	width:559px;
 	height:46px;
 	overflow:hidden;
 	display:table;
 	table-layout:fixed;
 }
 .notice .notice-contents li{
-	width:562px;
+	width:559px;
 	height:46px;
 	display:table-row;
 }
 
 .notice .notice-contents li div{
 	display:table-cell;
-	width:542px;
+	width:539px;
 	height:46px;
 	vertical-align: middle;
 	text-align:right;
@@ -159,10 +232,11 @@ body{
 	float:left;
 }
 #content .today-prog{
-	width:289px;
+	width:286px;
 	height:265px;
 	background:#333;
 	float:left;
+	overflow:hidden;
 	margin-left:6px;
 }
 
@@ -400,7 +474,7 @@ body{
 	border:none;
 
 	overflow: hidden;
-	background: url('/images/button_send.png') no-repeat;
+	background:assets-url('button_send.png') no-repeat;
 }
 .form-wrapper .form-row .form-submit input:hover {
 	cursor: pointer;
