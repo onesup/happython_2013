@@ -1,8 +1,9 @@
+
                     <div class="row-fluid">
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">회원 등록</div>
+                                <div class="muted pull-left">멘토링 등록</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
@@ -10,61 +11,95 @@
                                       <fieldset>
                                         <legend>기본정보</legend>
                                         <div class="control-group">
-                                          <label class="control-label" for="focusedInput">이름</label>
+                                          <label class="control-label" for="select01">종류</label>
+                                          <div class="controls">
+                                            <input class="uniform_on" type="radio" name="radio1" id="optionsCheckbox1" value="식량"> <label class="help-inline" for="optionsCheckbox1">식량</label>
+                                            <input class="uniform_on" type="radio" name="radio1" id="optionsCheckbox2" value="채소"> <label class="help-inline" for="optionsCheckbox2">채소</label>
+                                            <input class="uniform_on" type="radio" name="radio1" id="optionsCheckbox3" value="과수"> <label class="help-inline" for="optionsCheckbox3">과수</label>
+                                            <input class="uniform_on" type="radio" name="radio1" id="optionsCheckbox4" value="특용"> <label class="help-inline" for="optionsCheckbox4">특용</label>
+                                            <input class="uniform_on" type="radio" name="radio1" id="optionsCheckbox5" value="기타"> <label class="help-inline" for="optionsCheckbox5">기타</label>
+<!--
+                                            <span class="help-block">작물로 검색해서 선택하려면 아래 메뉴를 이용하세요.</span>
+
+                                            <select id="select01" class="chzn-select">
+                                              <option>something</option>
+                                              <option>2</option>
+                                              <option>3</option>
+                                              <option>4</option>
+                                              <option>5</option>
+                                            </select>
+-->
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label">교육내용</label>
                                           <div class="controls">
                                             <input class="input-xlarge focused" id="focusedInput" type="text" value="">
                                           </div>
                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label">이메일</label>
+                                          <label class="control-label" for="date01">일정</label>
                                           <div class="controls">
-                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                            <input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
+                                            ~
+                                            <input type="text" class="input-xlarge datepicker" id="date02" value="02/16/12">
+                                            <p class="help-block">시작일과 종료일이 같을 수 있습니다.</p>
                                           </div>
                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label">비밀번호</label>
+                                          <label class="control-label">교육시간</label>
                                           <div class="controls">
-                                            <input class="input-xlarge focused" id="focusedInput" type="password" value="">
+                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                            <p class="help-block">시간단위 입력.</p>
                                           </div>
                                         </div>
-                                        <div class="control-group warning">
-                                          <label class="control-label" for="selectError">권한그룹</label>
+                                        <div class="control-group">
+                                          <label class="control-label" for="selectError">난이도</label>
                                           <div class="controls">
                                             <select id="selectError">
-                                              <option>관리자</option>
-                                              <option>멘토</option>
-                                              <option>회원</option>
+                                              <option>상</option>
+                                              <option>중</option>
+                                              <option>하</option>
                                             </select>
                                           </div>
                                         </div>
-
-                                        <legend>멘토정보 (멘토그룹만 필요)</legend>
                                         <div class="control-group">
-                                          <label class="control-label" for="focusedInput">주요작물</label>
+                                          <label class="control-label" for="focusedInput">필요인원</label>
                                           <div class="controls">
                                             <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                            <span class="help-inline">검색시 활용됨.</span>
+                                            <span class="help-inline">인원수 "명"단위로 표시</span>
                                           </div>
                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label">소개글</label>
+                                          <label class="control-label" for="focusedInput">일당</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                            <span class="help-inline">인원당 일당을 "원"단위로 표시</span>
+                                          </div>
+                                        </div>
+                                        <div class="control-group">
+                                          <label class="control-label" for="focusedInput">장소</label>
+                                          <div class="controls">
+                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+                                            <span class="help-inline">주소나 위치를 알 수 있는 문장이나 단어.</span>
+                                          </div>
+                                        </div>
+                                        
+                                        <legend>확장정보</legend>
+                                        <div class="control-group">
+                                          <label class="control-label">멘토링 내용</label>
                                           <div class="controls">
                                             <textarea class="input-xlarge textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
-                                            <span class="help-inline">멘토정보에 포함됨.</span>
+                                            <span class="help-inline">"교육내용"을 구체화해서 기록.</span>
                                           </div>
                                         </div>
                                         <div class="control-group">
-                                          <label class="control-label">본인사진</label>
+                                          <label class="control-label">지도</label>
                                           <div class="controls">
-                                            <div class="uploader hover" id="uniform-fileInput"><input class="input-file uniform_on" id="fileInput" type="file"><span class="filename" style="-webkit-user-select: none;">No file selected</span><span class="action" style="-webkit-user-select: none;">Choose File</span></div>
+                                          	<div id="map" style="width:600px;height:400px;"></div><br />
+                                            lat:<input class="input-xlarge focused" id="mapLat" type="text" value=""><br />
+                                            lng:<input class="input-xlarge focused" id="mapLng" type="text" value="">
                                             <span class="help-inline">메인페이지 표시.</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label">농장사진</label>
-                                          <div class="controls">
-                                            <div class="uploader hover" id="uniform-fileInput"><input class="input-file uniform_on" id="fileInput" type="file"><span class="filename" style="-webkit-user-select: none;">No file selected</span><span class="action" style="-webkit-user-select: none;">Choose File</span></div>
-                                            <span class="help-inline">멘토정보에 표시.</span>
                                           </div>
                                         </div>
 
@@ -80,6 +115,67 @@
                         </div>
                         <!-- /block -->
                     </div>
+
+<link href="/assets/vendors/datepicker.css" rel="stylesheet" media="screen">
+<link href="/assets/vendors/chosen.min.css" rel="stylesheet" media="screen">
+
+<script src="/assets/vendors/jquery-1.9.1.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/vendors/jquery.uniform.min.js"></script>
+<script src="/assets/vendors/chosen.jquery.min.js"></script>
+<script src="/assets/vendors/bootstrap-datepicker.js"></script>
+
+<script src="/assets/vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+<script src="/assets/vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+<script src="/assets/vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=405db4a3478f2fe559fd2b2d0d27856af183eb07" charset="utf-8"></script>
+<script type="text/javascript">
+	var map;
+	function init() {
+    // 지도 출력
+		map = new daum.maps.Map(document.getElementById('map'), {
+			center: new daum.maps.LatLng(37.537123, 127.005523),
+			level: 3
+		});
+    
+    // 마커 출력
+		var marker = new daum.maps.Marker({
+			position: new daum.maps.LatLng(37.537123, 127.005523)
+		});
+		marker.setMap(map);
+    
+    daum.maps.event.addListener(map,"dragend",function(){
+      // 좌표값 반환
+			var center = map.getCenter();
+			document.getElementById("mapLat").value = center.getLat();
+      document.getElementById("mapLng").value = center.getLng();
+      // 마커 이동
+      var position = new daum.maps.LatLng(center.getLat(), center.getLng());
+      marker.setPosition(position);
+      marker.setMap(map);
+    });
+    
+    daum.maps.event.addListener(map,"click",function(e) {
+      // 마커 이동
+      marker.setPosition(e.latLng);
+      marker.setMap(map);
+      // 좌표값 반환
+			document.getElementById("mapLat").value = e.latLng.getLat();
+      document.getElementById("mapLng").value = e.latLng.getLng();
+    });
+	}
+
+  $(function() {
+    init();
+    //$(".datepicker").datepicker();
+    //$(".chzn-select").chosen();
+  });
+</script>
+
+
+
 
 <h1>Admin::Jobs#new</h1>
 <%= render 'form' %>
