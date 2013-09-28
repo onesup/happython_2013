@@ -31,7 +31,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">팜팜멘토</a>
+                    <%= link_to "팜팜멘토 관리자 모드", admin_path, class: "brand" %>
                     <div class="nav-collapse collapse">
                       <ul class="nav pull-right">
                         <li class="dropdown">
@@ -103,6 +103,11 @@
                         <li>
                           <%= link_to root_path do %>
                             <i class="icon-chevron-right"></i>사이트 바로가기(홈)
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to admin_jobs_path do %>
+                            <i class="icon-chevron-right"></i>멘토링 프로그램 관리
                           <% end %>
                         </li>
                         <li>
