@@ -37,6 +37,14 @@
                       </div>
                     </div>
                     <div class="control-group">
+                      <label class="control-label">시작시각 ~ 종료시각</label>
+                      <div class="controls">
+                        <span class="input-xlarge uneditable-input"><%= @job.start_time %></span>시
+                        ~
+                        <span class="input-xlarge uneditable-input"><%= @job.finish_time %></span>시
+                      </div>
+                    </div>
+                    <div class="control-group">
                       <label class="control-label" for="selectError">난이도</label>
                       <div class="controls">
                         <span class="input-xlarge uneditable-input"><%= @job.level %></span>
