@@ -71,13 +71,10 @@ namespace :deploy do
 end
 
 namespace :assets do
-
   desc "upload admin theme"
   task :upload_theme do
-    # sftp = Net::SFTP.start("localhost", "daul")
     origin_file = "app/assets/themes"
     destination_file = "#{shared_path}/assets"
-    # sftp.upload(origin_file, destination_file)
     top.upload(origin_file, destination_file, :via => :scp, :recursive => true)
   end
 end
