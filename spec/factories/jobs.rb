@@ -2,7 +2,13 @@
 
 FactoryGirl.define do
   factory :job do
+    category "MyString"
     title "MyString"
-    description "MyText"
+    content "MyText"
+    time "MyText"
+    level "MyString"
+    workers_count 1
+    pay 1
+    address "MyString"
   end
 end
