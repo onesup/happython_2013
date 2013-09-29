@@ -139,33 +139,44 @@
 			
 			
 			
-			
-			<li class="mentor-item">
-				<div class="mentor-wrapper">
-					<div class="mentor-thumbnail">
-						<%= image_tag "dummy_mentor.png"%>
-					</div>
-					<div class="mentor-summary">
-						<div class="summary-bg"></div>
-						<%= image_tag "green_label_blank.png", class:"green-label" %>
-						<div class="summary-content">
-							<div class="summary-title">김팜팜&nbsp;멘토</div>
-							<div class="summary-category">
-								<ul>
-									<li>벼</li>
-									<li>깻잎</li>
-								</ul>
-								<div class="category-count">
-									총 3건 진행 중
-								</div>
-							</div>
-							<div class="summary-term">2013.&nbsp;09.&nbsp;17&nbsp;~&nbsp;09.&nbsp;29</div>
-						</div>
-					</div>
-					<div class="mentor-indicator selected"></div>
-					<div class="mentor-indicator disabled"></div>
-				</div>
-			</li>
+			<% @jobs.each do |job| %>
+  			<li class="mentor-item">
+  				<div class="mentor-wrapper">
+  					<div class="mentor-thumbnail">
+  						<%= image_tag "dummy_mentor.png"%>
+  					</div>
+  					<div class="mentor-summary">
+  						<div class="summary-bg"></div>
+  						<%= image_tag "green_label_blank.png", class:"green-label" %>
+  						<div class="summary-content">
+  							<div class="summary-title">
+                  <% unless job.mentor.nil? %>
+                      <% unless job.mentor.name.nil?%>
+                        <%= job.mentor.name %>&nbsp;멘토
+                        <% else %>
+                        멘토 이름 등록 필요
+                      <% end %>
+                    <% else %>
+                      멘토 등록 필요
+                  <% end %>
+                </div>
+  							<div class="summary-category">
+  								<ul>
+  									<li>벼</li>
+  									<li>깻잎</li>
+  								</ul>
+  								<div class="category-count">
+  									총 3건 진행 중
+  								</div>
+  							</div>
+  							<div class="summary-term">2013.&nbsp;09.&nbsp;17&nbsp;~&nbsp;09.&nbsp;29</div>
+  						</div>
+  					</div>
+  					<div class="mentor-indicator selected"></div>
+  					<div class="mentor-indicator disabled"></div>
+  				</div>
+  			</li>
+      <% end %>
 			<li class="mentor-item">
 				<div class="mentor-wrapper">
 					<div class="mentor-thumbnail">
