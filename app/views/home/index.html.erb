@@ -174,14 +174,16 @@
                 </div>
   							<div class="summary-category">
   								<ul>
-  									<li>벼</li>
-  									<li>깻잎</li>
+                    <li><%= job.category %></li>
   								</ul>
   								<div class="category-count">
-  									총 3건 진행 중
+  									<!-- 총 3건 진행 중 -->
+                    진행중
   								</div>
   							</div>
-  							<div class="summary-term">2013.&nbsp;09.&nbsp;17&nbsp;~&nbsp;09.&nbsp;29</div>
+                <%# unless job.started_at.nil? or job.finished_at.nil? %>
+  							<div class="summary-term"><%#= job.started_at.started_at.strftime("%Y. %m. %d")%>~&nbsp;09.&nbsp;29</div>
+                <%# end %>
   						</div>
   					</div>
   					<div class="mentor-indicator selected"></div>
@@ -434,7 +436,7 @@ $(function() {
 		 
 	$("#datepicker").datepicker({
 		showOn: "button",
-		buttonImage: "/assets/serach_calaendar_icon.png",
+		buttonImage: "<%= asset_path("serach_calaendar_icon.png") %>",
 		buttonImageOnly: true
 	});
 	

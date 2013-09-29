@@ -17,7 +17,8 @@ class CreateJobs < ActiveRecord::Migration
       t.integer :learning_time
       t.integer :workers_count
       t.integer :pay
-      t.timestamps
+    
+      t.timestamps    
     end
   end
 end
