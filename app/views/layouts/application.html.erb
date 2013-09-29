@@ -99,27 +99,27 @@ $(document).ready(function() {
 
 
 	$("#leftmenu-introduce img").mouseenter(function() {
-		$(this).attr("src", '/assets/leftmenu_introduce_over.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_introduce_over.png") %>');
 	}).mouseleave(function() {
-		$(this).attr("src", '/assets/leftmenu_introduce.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_introduce.png") %>');
 	});
 
 	$("#leftmenu-notice img").mouseenter(function() {
-		$(this).attr("src", '/assets/leftmenu_notice_over.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_notice_over.png") %>');
 	}).mouseleave(function() {
-		$(this).attr("src", '/assets/leftmenu_notice.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_notice.png") %>');
 	});
 
 	$("#leftmenu-review img").mouseenter(function() {
-		$(this).attr("src", '/assets/leftmenu_review_over.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_review_over.png") %>');
 	}).mouseleave(function() {
-		$(this).attr("src", '/assets/leftmenu_review.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_review.png") %>');
 	});
 
 	$("#leftmenu-faq img").mouseenter(function() {
-		$(this).attr("src", '/assets/leftmenu_faq_over.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_faq_over.png") %>');
 	}).mouseleave(function() {
-		$(this).attr("src", '/assets/leftmenu_faq.png');
+		$(this).attr("src", '<%= asset_path("leftmenu_faq.png") %>');
 	});
 
 });

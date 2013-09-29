@@ -1,6 +1,6 @@
 <div class="grid row-about">
   <div class="about-ff">
-    <%= link_to image_tag("about-ff.png") %></a>
+    <%= link_to image_tag("about-ff.png"), "home/guide"  %></a>
   </div>
   <div class="notice">
     <div class="notice-icon">
@@ -46,38 +46,16 @@
       <%= image_tag("prog_title.png", width:"289px")%>
     </div>
     <ul class="prog-list">
+      <% @jobs[0..3].each do |job|%>
       <li class="prog-list-item">
         <div class="prog-date">
-          2013. 06. 09 ~ 2013. 09. 10 <span class="new"><%= image_tag("icon_prog_new.png") %></span>
+          <%= job.started_at.strftime("%Y.%m.%d") unless job.started_at.nil? %> ~ <%= job.finished_at.strftime("%Y.%m.%d") unless job.finished_at.nil? %><span class="new"><%= image_tag("icon_prog_new.png") %></span>
         </div>
         <div class="prog-subject">
-          벼농사의 달인과 함께 하는 벼농사 배우기
+          <%= job.title%>
         </div>
       </li>
-      <li class="prog-list-item">
-        <div class="prog-date">
-          2013. 06. 09 ~ 2013. 09. 10
-        </div>
-        <div class="prog-subject">
-          벼농사의 달인과 함께 하는 벼농사 배우기
-        </div>
-      </li>
-      <li class="prog-list-item">
-        <div class="prog-date">
-          2013. 06. 09 ~ 2013. 09. 10
-        </div>
-        <div class="prog-subject">
-          벼농사의 달인과 함께 하는 벼농사 배우기
-        </div>
-      </li>
-      <li class="prog-list-item">
-        <div class="prog-date">
-          2013. 06. 09 ~ 2013. 09. 10
-        </div>
-        <div class="prog-subject">
-          벼농사의 달인과 함께 하는 벼농사 배우기
-        </div>
-      </li>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -257,7 +235,7 @@
 
 						</div>
 						<div class="mentor-region-map">
-							<!-- 지도 이미지 자리-->
+							<img src="http://feelthesoul.net/wp-content/uploads/2013/09/dummy_map.png"/>
 						<div class="mentor-etc">
 							<%= @job.contents %>
 						</div>
