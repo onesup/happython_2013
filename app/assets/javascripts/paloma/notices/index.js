@@ -18,6 +18,16 @@
 
 
   Paloma.callbacks['notices']['index'] = function(params){
-    // Do something here.
+	  $(document).ready(function() {
+		  $(".expdable-table .row .mother").click(function() {
+			  $(this).next().toggle();
+			  if($(this).find(".pointer img").attr("src").indexOf('droppointer-down.png')>-1) {
+			  	$(this).find(".pointer img").attr("src", '/assets/droppointer-up.png');
+			  } else {
+			  	$(this).find(".pointer img").attr("src", '/assets/droppointer-down.png');
+			  }
+			  
+		  });
+	  });
   };
 })();

@@ -52,32 +52,30 @@
                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle">회원<b class="caret"></b></a>
                                 <ul class="dropdown-menu" id="menu1">
                                     <li>
-                                      <%= link_to "회원 목록", admin_users_path %>
+                                      <%= link_to "회원목록", admin_users_path %>
                                     </li>
+                                    <li><a href="#">멘토목록</a></li>
                                     <li>
-                                      <%= link_to "계정 등록", new_admin_user_path %>
+                                      <%= link_to "계정등록", new_admin_user_path %>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">멘토링<b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">멘토<b class="caret"></b></a>
                                 <ul class="dropdown-menu" id="menu1">
-                                    <li><a href="#">멘토링 목록</a></li>
-                                    <li><a href="#">멘토링 등록</a></li>
+                                    <li><a href="#">멘토목록</a></li>
                                     <li>
-                                      <%= link_to "멘토링 후기", admin_reviews_path %>
+                                      <%= link_to "멘토링후기", admin_reviews_path %>
                                     </li>
                                 </ul>
                             </li>
-<!--
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">배너<b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">베너<b class="caret"></b></a>
                                 <ul class="dropdown-menu" id="menu1">
-                                    <li><a href="#">배너 목록</a></li>
-                                    <li><a href="#">배너 등록</a></li>
+                                    <li><a href="#">리스트</a></li>
+                                    <li><a href="#">새등록</a></li>
                                 </ul>
                             </li>
--->
                             <li class="dropdown">
                                 <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">게시글<i class="caret"></i></a>
                                 <ul class="dropdown-menu">
@@ -108,6 +106,16 @@
                           <% end %>
                         </li>
                         <li>
+                          <%= link_to admin_jobs_path do %>
+                            <i class="icon-chevron-right"></i>멘토링 프로그램 관리
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to admin_users_path do %>
+                            <i class="icon-chevron-right"></i>유저관리
+                          <% end %>
+                        </li>
+                        <li>
                           <%= link_to admin_notices_path do %>
                             <i class="icon-chevron-right"></i>공지사항
                           <% end %>
@@ -124,7 +132,7 @@
                         </li>
                         <li>
                           <%= link_to admin_reviews_path do %>
-                            <i class="icon-chevron-right"></i>멘토링 후기
+                            <i class="icon-chevron-right"></i>멘토후기
                           <% end %>
                         </li>
                     </ul>

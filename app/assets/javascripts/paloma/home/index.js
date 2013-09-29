@@ -1,4 +1,24 @@
+function SetDateForSearch(targetDate) {
+	var today = new Date();
+	$("#today-month").html(today.getMonth()+1);
+	$("#today-date").html(today.getDate());
+	today.setDate(today.getDate() + targetDate);
+	$("#target-month").html(today.getMonth()+1);
+	$("#target-date").html(today.getDate());
+	
+}
+
+function CloseJoinPopup() {
+	$("#join-popup").hide();
+}
+function JoinConfirm() {
+	if(confirm("참여하시겠습니까?")) {
+		alert("Somthing to do");
+	}
+	CloseJoinPopup();
+}
 function MoveMentorDetailView(position) {
+	$("#join-popup").hide();
 	var detailPosition = $("#mentor-detail-wrapper").index();
 	if(detailPosition<=position) {
 		position--;
@@ -44,6 +64,9 @@ function MoveMentorDetailView(position) {
 
   Paloma.callbacks['home']['index'] = function(params){
     $(document).ready(function(){
+		//date picker init
+		SetDateForSearch(7);
+		
     	$(".bxslider").bxSlider({
     		mode : 'fade',
     		captions: true,
@@ -101,6 +124,33 @@ function MoveMentorDetailView(position) {
 			$("#mentor-detail-wrapper").slideUp(500);
 			setTimeout("MoveMentorDetailView("+$(this).index()+")", 510);
 		}); 
+		
+		$(".mentor-category ul.category-tab li").click(function() {
+			$(".mentor-category ul.category-tab li").removeClass("selected")
+			$(this).addClass("selected");
+		});
+		
+		$("#detail-close").click(function() {
+			$("#join-popup").hide();
+			$("#mentor-detail-wrapper").slideUp(500);
+			$(".mentor-indicator.selected").hide();
+			$(".mentor-indicator.disabled").hide();
+		});
+		$("#join-btn").click(function() {
+			$("#join-popup").show();
+		});
+		
+		$("#datepicker").change(function() {
+			var today = new Date();
+			var target = new Date($(this).val());
+			
+			var diff = Math.floor((target-today)/(24*3600*1000));
+			if(diff<0) {
+				alert("지난 날짜를 선택할 수 없습니다.");
+				return false;
+			}
+			SetDateForSearch(diff);
+		});
     });
   };
 })();
