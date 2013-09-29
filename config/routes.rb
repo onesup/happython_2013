@@ -3,6 +3,9 @@ Kfarm::Application.routes.draw do
   get "banners/show"
   get "banners/edit"
   get "banners/new"
+  match 'guide' => "home/guide", :via => :get
+  get "faq/index"
+  get "home/guide"
   resources :jobs
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
