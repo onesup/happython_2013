@@ -10,3 +10,4 @@
 //= require ./jobs/_manifest.js
 //= require ./answers/_manifest.js
 //= require ./notices/_manifest.js
+//= require ./banners/_manifest.js

@@ -56,14 +56,14 @@
     <div class="control-group">
       <label class="control-label" for="focusedInput">주요작물</label>
       <div class="controls">
-        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
+        <%= f.text_field :mentor_major, class: "input-xlarge focused"%>
         <span class="help-inline">검색시 활용됨.</span>
       </div>
     </div>
     <div class="control-group">
       <label class="control-label">소개글</label>
       <div class="controls">
-        <textarea class="input-xlarge textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
+        <%= f.text_area :mentor_guide, class: "input-xlarge focused"%>
         <span class="help-inline">멘토정보에 포함됨.</span>
       </div>
     </div>

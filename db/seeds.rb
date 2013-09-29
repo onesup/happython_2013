@@ -2,11 +2,22 @@ User.destroy_all
 admin = User.create!(email:'admin@farmfarmmentor.org', password:'12341234')
 admin# .confirm!
 Role.destroy_all
+Role.create!(
+  name: :mentor,
+  title: "role for mentor",
+  description:"mentor role"
+)
+Role.create!(
+  name: :mentee,
+  title: "role for mentee",
+  description:"mentee role"
+)
 role = Role.create!(
   name: :admin,
   title: "role for admin",
   description:"this user can do anything"
 )
+
 role.create_rule(:system, :administrator)
 role.rule_on(:system, :administrator)
 
