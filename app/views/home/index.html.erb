@@ -157,11 +157,11 @@
       <% end %>			
 			<li id="mentor-detail-wrapper">
 				<div class="mentor-title">
-					<span><%= @job.mentor.name %> 멘토</span>
+					<span><%#= @job.mentor.name %> 멘토</span>
 					<%=image_tag "detail_close.png", id:"detail-close"%>
 				</div>
 				<div class="mentor-desc">
-					<%= @job.mentor.mentor_guide %>
+					<%#= @job.mentor.mentor_guide %>
 					<%= image_tag "join_mentoring.png", id:"join-btn"%>
 				</div>
 				
@@ -179,11 +179,11 @@
 							<ul>
 								<li>
 									<span class="info-label">교육내용</span>
-									<span class="info-content"><%= @job.title %></span>
+									<span class="info-content"><%#= @job.title %></span>
 								</li>
 								<li>
 									<span class="info-label">교육일정</span>
-									<span class="info-content"><%= @job.started_at.strftime("%Y. %m. %d") %>~<%= @job.finished_at.strftime("%Y. %m. %d") %></span>
+									<span class="info-content"><%#= @job.started_at.strftime("%Y. %m. %d") %>~<%#= @job.finished_at.strftime("%Y. %m. %d") %></span>
 								</li>
 								<li>
 									<span class="info-label">일 할 시간</span>
@@ -191,28 +191,28 @@
 								</li>
 								<li>
 									<span class="info-label">교육시간</span>
-									<span class="info-content"><%= @job.learning_time %>시간</span>
+									<span class="info-content"><%#= @job.learning_time %>시간</span>
 								</li>
 								<li>
 									<span class="info-label">필요인원</span>
-									<span class="info-content"><%= @job.workers_count %>명</span>
+									<span class="info-content"><%#= @job.workers_count %>명</span>
 								</li>
 								<li>
 									<span class="info-label">난이도</span>
-									<span class="info-content"><%= @job.level %></span>
+									<span class="info-content"><%#= @job.level %></span>
 								</li>
 								<li>
 									<span class="info-label">일당</span>
-									<span class="info-content"><%= @job.pay %> 원</span>
+									<span class="info-content"><%#= @job.pay %> 원</span>
 								</li>
 								<li>
 									<span class="info-label">장소</span>
-									<span class="info-content"><%= @job.location %></span>
+									<span class="info-content"><%#= @job.location %></span>
 								</li>
 							</ul>
 
 							<div class="mentor-image">
-								<%= image_tag @job.mentor.farm %>
+								<%#= image_tag @job.mentor.farm %>
 							</div>
 						</div>
 					</div>
@@ -223,7 +223,7 @@
 						<div class="mentor-region-map">
 							<img src="http://feelthesoul.net/wp-content/uploads/2013/09/dummy_map.png"/>
 						<div class="mentor-etc">
-							<%= @job.contents %>
+							<%#= @job.contents %>
 						</div>
 					</div>
 
@@ -234,7 +234,7 @@
 							<area shape="rect" alt="확인" title="" coords="119,170,219,196" href="javascript:JoinConfirm()" target="" />
 							<area shape="rect" alt="닫기" title="" coords="280,0,338,50" href="javascript:CloseJoinPopup()" target="" />
 						</map>
-						<p id="mantor-phone"><%=@job.mentor.phone%></p>
+						<p id="mantor-phone"><%#=@job.mentor.phone%></p>
 					</div>
 				</div>
 			</li>

@@ -20,13 +20,21 @@ function JoinConfirm() {
 function MoveMentorDetailView(position) {
 	$("#join-popup").hide();
 	var detailPosition = $("#mentor-detail-wrapper").index();
-	if(detailPosition<=position) {
-		position--;
+	// position 보정
+	if(position>=detailPosition) {
+		position --;
 	}
-	var addon = position%6;
-	var index = position+(5-addon);
+	// 디테일 뷰 맨 끝으로 초기화 -> after position의 정확성 올리기 위해
+	$("#mentor-detail-wrapper").insertAfter(".mentor-item:last");
+	
+	console.log(position, detailPosition);
+	
+	var index = (Math.floor(position/6)+1)*6 - 1 ;
+	console.log(index);
+	
 	$(".mentor-indicator.selected").hide();
 	
+	// 다른 아이템들 활성화/비활성화 초기화
 	$(".mentor-item").each(function() {
 		if(position == $(this).index()) {
 			$(this).find(".mentor-indicator.disabled").hide();
@@ -37,8 +45,11 @@ function MoveMentorDetailView(position) {
 		}
 		
 	});
+	// 선택된 아이템 활성화 효과 적용
 	$(".mentor-item").eq(position).find(".mentor-indicator.selected").show();
+	// 디테일 뷰 이동
 	$("#mentor-detail-wrapper").insertAfter(".mentor-item:eq("+index+")");
+	// 디테일 뷰 표시
 	$("#mentor-detail-wrapper").slideDown(1000);
 }
 (function(){
