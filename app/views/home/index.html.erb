@@ -160,6 +160,10 @@
 					<span><%#= @job.mentor.name %> 멘토</span>
 					<%=image_tag "detail_close.png", id:"detail-close"%>
 				</div>
+				<div class="mentor-detail-ajax">
+					<%=image_tag "ajax-loader.gif"%>
+					<p>멘토 정보를 가져오는 중입니다. 잠시만 기다려주세요.</p>
+				</div>
 				<div class="mentor-desc">
 					<%#= @job.mentor.mentor_guide %>
 					<%= image_tag "join_mentoring.png", id:"join-btn"%>
