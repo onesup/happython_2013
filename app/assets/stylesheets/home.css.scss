@@ -225,10 +225,10 @@
 #mentor-detail-wrapper {
 	display:none;
 	position: relative;
-	padding-bottom: 34px;
 	background: #fff;
 	width: 817px;
 	float: left;
+	min-height: 0;
 	border: 5px solid #00A563;
 }
 #mentor-detail-wrapper .mentor-title {
@@ -290,10 +290,12 @@
 #mentor-detail-wrapper .mentor-category .mentor-detail-left {
 	float: left;
 	width: 360px;
+	margin-bottom: 34px;
 }
 #mentor-detail-wrapper .mentor-category .mentor-detail-right {
 	float: right;
 	width: 360px;
+	margin-bottom: 34px;
 }
 #mentor-detail-wrapper .mentor-category ul.category-tab {
 
@@ -467,4 +469,18 @@
 .ui-datepicker-prev.ui-corner-all:hover, .ui-datepicker-next.ui-corner-all:hover {
 	cursor: pointer;
 	text-decoration: none;
+}
+.mentor-detail-ajax {
+	display:none;
+	padding-top: 20px;
+	text-align: center;
+	min-height: 92px;
+	overflow: hidden;
+}
+.mentor-detail-ajax p {
+	text-align: center;
+	font-family: "NanumGothic";
+	font-size: 11px;
+	margin-top: 4px;
+	
 }

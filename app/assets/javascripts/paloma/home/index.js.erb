@@ -1,3 +1,32 @@
+//type 0:move 1:close 3:open
+function InitMentorDescAnimation(type) {
+	$("#join-popup").hide();
+	if(type == 0) {
+		console.log("move");
+		$(".mentor-detail-ajax").fadeIn(200);	
+	} else if(type == 1) {
+		console.log("close");
+		$("#mentor-detail-wrapper").css("min-height", "0");
+//		$(".mentor-detail-ajax").hide();	
+	} else {
+		console.log("open");
+		$("#mentor-detail-wrapper").css("min-height", "0");
+		$(".mentor-detail-ajax").show();
+	}
+	$("#mentor-detail-wrapper").slideUp(500);
+	$(".mentor-desc").hide();
+	$(".mentor-category").hide();
+	
+	setTimeout("MentorDescAjaxCallback()", 1500);
+}
+
+function MentorDescAjaxCallback(ajax) {
+	$("#mentor-detail-wrapper").css("min-height", "157px");
+	$(".mentor-detail-ajax").hide();
+	$(".mentor-desc").slideDown(500);
+	$(".mentor-category").slideDown(500);
+}
+
 function SetDateForSearch(targetDate) {
 	var today = new Date();
 	$("#today-month").html(today.getMonth()+1);
@@ -18,15 +47,28 @@ function JoinConfirm() {
 	CloseJoinPopup();
 }
 function MoveMentorDetailView(position) {
-	$("#join-popup").hide();
-	var detailPosition = $("#mentor-detail-wrapper").index();
-	if(detailPosition<=position) {
-		position--;
+
+	// 디테일 뷰 초기화
+	if($("#mentor-detail-wrapper").is(':visible')) {
+		InitMentorDescAnimation(0);
+	} else {
+		InitMentorDescAnimation(2);	
 	}
-	var addon = position%6;
-	var index = position+(5-addon);
+	
+	var detailPosition = $("#mentor-detail-wrapper").index();
+	// position 보정
+	if(position>=detailPosition) {
+		position --;
+	}
+	// 디테일 뷰 맨 끝으로 초기화 -> after position의 정확성 올리기 위해
+	$("#mentor-detail-wrapper").insertAfter(".mentor-item:last");
+	
+	
+	var index = (Math.floor(position/6)+1)*6 - 1 ;
+	
 	$(".mentor-indicator.selected").hide();
 	
+	// 다른 아이템들 활성화/비활성화 초기화
 	$(".mentor-item").each(function() {
 		if(position == $(this).index()) {
 			$(this).find(".mentor-indicator.disabled").hide();
@@ -37,9 +79,12 @@ function MoveMentorDetailView(position) {
 		}
 		
 	});
+	// 선택된 아이템 활성화 효과 적용
 	$(".mentor-item").eq(position).find(".mentor-indicator.selected").show();
+	// 디테일 뷰 이동
 	$("#mentor-detail-wrapper").insertAfter(".mentor-item:eq("+index+")");
-	$("#mentor-detail-wrapper").slideDown(1000);
+	// 디테일 뷰 표시
+	$("#mentor-detail-wrapper").slideDown(400);
 }
 (function(){
   // You access variables from before/around filters from _x object.
@@ -121,7 +166,6 @@ function MoveMentorDetailView(position) {
 		
 		$(".mentor-item").click(function() {
 			$(this).find(".mentor-summary").show();
-			$("#mentor-detail-wrapper").slideUp(500);
 			setTimeout("MoveMentorDetailView("+$(this).index()+")", 510);
 		}); 
 		
@@ -131,8 +175,7 @@ function MoveMentorDetailView(position) {
 		});
 		
 		$("#detail-close").click(function() {
-			$("#join-popup").hide();
-			$("#mentor-detail-wrapper").slideUp(500);
+			InitMentorDescAnimation(1);
 			$(".mentor-indicator.selected").hide();
 			$(".mentor-indicator.disabled").hide();
 		});

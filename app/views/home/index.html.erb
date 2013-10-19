@@ -160,6 +160,10 @@
 					<span><%= @job.mentor.name unless @job.mentor.nil? %> 멘토</span>
 					<%=image_tag "detail_close.png", id:"detail-close"%>
 				</div>
+				<div class="mentor-detail-ajax">
+					<%=image_tag "ajax-loader.gif"%>
+					<p>멘토 정보를 가져오는 중입니다. 잠시만 기다려주세요.</p>
+				</div>
 				<div class="mentor-desc">
 					<%= @job.mentor.mentor_guide unless @job.mentor.nil? %>
 					<%= image_tag "join_mentoring.png", id:"join-btn"%>
@@ -179,7 +183,7 @@
 							<ul>
 								<li>
 									<span class="info-label">교육내용</span>
-									<span class="info-content"><%= @job.title %></span>
+									<span class="info-content"><%#= @job.title %></span>
 								</li>
 								<li>
 									<span class="info-label">교육일정</span>
@@ -191,23 +195,23 @@
 								</li>
 								<li>
 									<span class="info-label">교육시간</span>
-									<span class="info-content"><%= @job.learning_time %>시간</span>
+									<span class="info-content"><%#= @job.learning_time %>시간</span>
 								</li>
 								<li>
 									<span class="info-label">필요인원</span>
-									<span class="info-content"><%= @job.workers_count %>명</span>
+									<span class="info-content"><%#= @job.workers_count %>명</span>
 								</li>
 								<li>
 									<span class="info-label">난이도</span>
-									<span class="info-content"><%= @job.level %></span>
+									<span class="info-content"><%#= @job.level %></span>
 								</li>
 								<li>
 									<span class="info-label">일당</span>
-									<span class="info-content"><%= @job.pay %> 원</span>
+									<span class="info-content"><%#= @job.pay %> 원</span>
 								</li>
 								<li>
 									<span class="info-label">장소</span>
-									<span class="info-content"><%= @job.location %></span>
+									<span class="info-content"><%#= @job.location %></span>
 								</li>
 							</ul>
 
@@ -223,7 +227,7 @@
 						<div class="mentor-region-map">
 							<img src="http://feelthesoul.net/wp-content/uploads/2013/09/dummy_map.png"/>
 						<div class="mentor-etc">
-							<%= @job.contents %>
+							<%#= @job.contents %>
 						</div>
 					</div>
 
