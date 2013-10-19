@@ -8,21 +8,11 @@
     </div>
     <div class="notice-ticker">
       <ul class="notice-contents">
-        <li>
-          <div>
-            귀농 교육청과 연계한 <b>농촌 일손돕기 시범사업</b>
-          </div>
-        </li>
-        <li>
-          <div>
-            sdfsddfsdf
-          </div>
-        </li>
-        <li>
-          <div>
-            qweqwerwer
-          </div>
-        </li>
+        <% @notices.each do |notice| %>
+          <li>
+            <div><%= notice.title %></div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -30,15 +20,11 @@
 <div class="grid row-news">
   <div class="slider">
     <ul class="bxslider">
-      <li>
-        <%= image_tag("slider01.jpg", title:"여러분들의 도전을 응원 할 팜팜멘토의 홈페이지가 오픈하였습니다.") %>
-      </li>
-      <li>
-        <%= image_tag("slider01.jpg", title:"여러분들의 도전을 응원 할 팜팜멘토의 홈페이지가 오픈하였습니다.") %>
-      </li>
-      <li>
-        <%= image_tag("slider01.jpg", title:"여러분들의 도전을 응원 할 팜팜멘토의 홈페이지가 오픈하였습니다.") %>
-      </li>
+      <% @banners.each do |banner| %>
+        <li>
+          <%= image_tag(banner.banner_image, title: banner.title) %>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div class="today-prog">
