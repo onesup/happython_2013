@@ -71,15 +71,6 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 end
 
-namespace :assets do
-  desc "upload admin theme"
-  task :upload_theme do
-    origin_file = "app/assets/themes"
-    destination_file = "#{shared_path}/assets"
-    top.upload(origin_file, destination_file, :via => :scp, :recursive => true)
-  end
-end
-
 namespace :db do
   desc "reload the database with seed data"
   task :reset do

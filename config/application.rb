@@ -13,6 +13,6 @@ module Kfarm
     # -- all .rb files in that directory are automatically loaded.
     config.assets.enabled = true
     config.time_zone = 'Asia/Seoul'
-    config.assets.precompile = ['application.js', 'application.css', 'admin.js', 'admin.css']
+    config.assets.precompile += ['application.js', 'application.css', 'admin.js', 'admin.css']
   end
 end
