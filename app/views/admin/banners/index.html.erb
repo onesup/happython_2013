@@ -2,7 +2,7 @@
   <!-- block -->
   <div class="block">
     <div class="navbar navbar-inner block-header">
-        <div class="muted pull-left">후기 전체 목록</div>
+        <div class="muted pull-left">배너 목록</div>
     </div>
     <div class="block-content collapse in">
       <div class="span12">
@@ -16,22 +16,22 @@
             </tr>
           </thead>
           <tbody>
-            <% @reviews.each do |review| %>
+            <% @banners.each do |banner| %>
               <tr class="">
-                <td><%= review.id %></td>
-                <td><%= review.title %></td>
-                <td class="center"><%= review.created_at %></td>
+                <td><%= banner.id %></td>
+                <td><%= banner.title %></td>
+                <td class="center"><%= banner.created_at %></td>
                 <td class="center">
-                  <%= link_to "상세정보", admin_review_path(review) %>
-                  <%= link_to "수정", edit_admin_review_path(review) %>
-                  <%= link_to "삭제", admin_review_path(review), method: :delete, confirm: "삭제 OK?" %>
+                  <%= link_to "상세정보", admin_banner_path(banner) %>
+                  <%= link_to "수정", edit_admin_banner_path(banner) %>
+                  <%= link_to "삭제", admin_banner_path(banner), method: :delete, confirm: "삭제 OK?" %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
       </div>
-      <%= link_to "새 리뷰 등록", new_admin_review_path, class: "btn btn-primary"%>
+      <%= link_to "새 배너 등록", new_admin_banner_path, class: "btn btn-primary"%>
     </div>
   </div>
   <!-- /block -->

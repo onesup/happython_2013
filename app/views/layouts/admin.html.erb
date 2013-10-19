@@ -58,10 +58,10 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">베너<b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">배너<b class="caret"></b></a>
                                 <ul class="dropdown-menu" id="menu1">
-                                    <li><a href="#">리스트</a></li>
-                                    <li><a href="#">새등록</a></li>
+                                    <li><%= link_to "리스트", admin_banners_path %></li>
+                                    <li><%= link_to "새등록", new_admin_banner_path %></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -106,6 +106,11 @@
                         <li>
                           <%= link_to admin_notices_path do %>
                             <i class="icon-chevron-right"></i>공지사항
+                          <% end %>
+                        </li>
+                        <li>
+                          <%= link_to admin_banners_path do %>
+                            <i class="icon-chevron-right"></i>배너관리
                           <% end %>
                         </li>
                         <li>
