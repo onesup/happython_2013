@@ -11,6 +11,7 @@ module Kfarm
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.assets.enabled = true
     config.time_zone = 'Asia/Seoul'
     config.assets.precompile = ['application.js', 'application.css', 'admin.js', 'admin.css']
   end
