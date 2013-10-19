@@ -16,6 +16,8 @@ gem 'the_role', '~> 2.1.0'
 gem 'bootstrap-sass', '~> 2.3.2.2'
 gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
+gem 'kaminari'
+
 # for Rails 4.0
 gem 'simple_form', github: 'plataformatec/simple_form', tag: 'v3.0.0.beta1'
 # You'll need to include the following dependencies of Summernote

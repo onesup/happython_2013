@@ -23,6 +23,9 @@
 <% end %>
 </div>
 <div class="pager">
+  <%= paginate @notices %>
+</div>
+<div class="pager">
 	<ul>
 		<li><%= link_to "<", "#"%></li>
 		<li class="selected"><%= link_to "1", "#"%></li>

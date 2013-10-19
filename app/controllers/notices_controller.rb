@@ -4,7 +4,7 @@ class NoticesController < ApplicationController
   # GET /notices
   # GET /notices.json
   def index
-    @notices = Notice.all
+    @notices = Notice.page(params[:page]).per(5)# order("created_at desc")
   end
 
   # GET /notices/1
