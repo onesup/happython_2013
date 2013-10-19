@@ -11,4 +11,9 @@
 *= require font-awesome
 *= require summernote
 *= require bootstrap_and_override
+*= require bootstrap-responsive
+*= require bootstrap
+*= require DT_bootstrap
+*= require styles.css
+
 */

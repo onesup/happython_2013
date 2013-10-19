@@ -1,25 +1,13 @@
 <!DOCTYPE html>
     <head>
         <title>팜팜멘토 관리자</title>
-        <!-- Bootstrap -->
-        <% if Rails.env == "production" %>
-          <link href="/assets/themes/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-          <link href="/assets/themes/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-          <link href="/assets/themes/assets/styles.css" rel="stylesheet" media="screen">
-          <link href="/assets/themes/assets/DT_bootstrap.css" rel="stylesheet" media="screen">
-        <% else %>
-          <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-          <link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-          <link href="/assets/assets/styles.css" rel="stylesheet" media="screen">
-          <link href="/assets/assets/DT_bootstrap.css" rel="stylesheet" media="screen">      
-        <% end %>
-        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+        <%= stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="http://flot.googlecode.com/svn/trunk/excanvas.min.js"></script><![endif]-->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-      <%= javascript_include_tag "admin/admin", "data-turbolinks-track" => true %>
-      <script src="/assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
       <%= csrf_meta_tag %>
     </head>
     
@@ -152,17 +140,6 @@
             </footer>
         </div>
         <!--/.fluid-container-->
-
-      <script src="/assets/vendors/jquery-1.9.1.js"></script>
-      <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-      <script src="/assets/vendors/datatables/js/jquery.dataTables.min.js"></script>
-      <script src="/assets/assets/scripts.js"></script>
-      <script src="/assets/assets/DT_bootstrap.js"></script>
-        <script>
-        $(function() {
-            
-        });
-        </script>
     </body>
 
 </html>
