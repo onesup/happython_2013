@@ -38,6 +38,18 @@
                       <span class="help-inline">HTML 사용 가능.</span>
                     </div>
                   </div>
+                  <div class="control-group">
+                    <label class="control-label">배너 이미지</label>
+                    <div>
+                      <%= image_tag @banner.banner_image unless @banner.banner_image.nil? %>
+                    </div>
+                    <div class="controls">
+                      <div class="uploader hover" id="uniform-fileInput">
+                        <%= f.file_field :banner_image %>
+                      </div>
+                      <span class="help-inline">메인페이지 표시.</span>
+                    </div>
+                  </div>
 
                   <div class="form-actions">
                     <%= f.submit class: "btn btn-primary"  %>
