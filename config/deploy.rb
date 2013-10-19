@@ -39,10 +39,10 @@ namespace :deploy do
   after "deploy:setup", "deploy:setup_config"
   
   task :upload_parameters do
-    origin_file = "config/email.yml"
-    destination_file = "#{shared_path}/config/email.yml"
-    run "mkdir -p #{File.dirname(destination_file)}"
-    top.upload(origin_file, destination_file)
+    # origin_file = "config/email.yml"
+    # destination_file = "#{shared_path}/config/email.yml"
+    # run "mkdir -p #{File.dirname(destination_file)}"
+    # top.upload(origin_file, destination_file)
     origin_file = "config/facebook.yml"
     destination_file = "#{shared_path}/config/facebook.yml"
     run "mkdir -p #{File.dirname(destination_file)}"

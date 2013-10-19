@@ -33,7 +33,7 @@ questions = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","cor
 reviews = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
 users = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
 jobs.each do |job|
-  Job.create(title: job)
+  Job.create!(title: job)
   puts Job.last.title
 end
 answers.each do |answer|
