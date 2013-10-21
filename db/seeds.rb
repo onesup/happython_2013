@@ -26,33 +26,15 @@ puts "Admin role created"
 User.first.update( role: Role.with_name(:admin) )
 puts "created #{User.first.email} and that made administer"
 
-jobs = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
-answers = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
-notices = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
-questions = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
-reviews = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
-users = ["apple","pear","grape","peach","melon","sesame_leaf","pumpkin","corn"]
-jobs.each do |job|
-  Job.create!(title: job)
+titles = %w(사과 배 포도 복숭아 멜론 깻잎 호박 옥수수)
+contents = " 내용입니다."
+titles.each do |title|
+  Job.create!(title: title, contents: title + contents)
+  Answer.create!(title: title, contents: title + contents)
+  Notice.create!(title: title, contents: title + contents)
+  Question.create!(title: title, contents: title + contents)
+  Review.create!(title: title, contents: title + contents)
+  Banner.create!(title: title, contents: title + contents)
+  User.create(email: title+"@gmail.com", password:"123123123")
   puts Job.last.title
-end
-answers.each do |answer|
-  Answer.create(title: answer)
-  puts Answer.last.title
-end
-notices.each do |notice|
-  Notice.create(title: notice)
-  puts Notice.last.title
-end
-questions.each do |question|
-  Question.create(title: question)
-  puts Question.last.title
-end
-reviews.each do |review|
-  Review.create(title: review)
-  puts Review.last.title
-end
-users.each do |user|
-  User.create(email: user+"@gmail.com", password:"123123123")
-  puts User.last.email
 end
