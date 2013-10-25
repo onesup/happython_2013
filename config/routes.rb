@@ -15,6 +15,7 @@ Kfarm::Application.routes.draw do
     resources :users
     resources :banners
   end
+  
   resources :faq, :only => [:index]
   resources :reviews, :only => [:index, :show, :new, :create]
   resources :notices, :only => [:index, :show]
