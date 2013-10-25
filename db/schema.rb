@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025220847) do
+ActiveRecord::Schema.define(version: 20131025222240) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20131025220847) do
     t.string   "link"
     t.string   "contents"
     t.string   "banner_image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "book_urls", force: true do |t|
+    t.string   "url"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

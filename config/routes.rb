@@ -2,7 +2,14 @@ Kfarm::Application.routes.draw do
   match 'guide' => "home/guide", :via => :get
   get "faq/index"
   get "home/guide"
-
+  
+  resources :books do
+    collection do
+      get 'search'
+    end
+  end
+  
+  
   resources :jobs do
   end
 

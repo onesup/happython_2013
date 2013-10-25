@@ -190,7 +190,7 @@ class CrawlingBook
   end
         
   def self.start
-    code = "KOR13"
+    code = "KOR41"
     CrawlingBook.url_start(code)
   end
   
