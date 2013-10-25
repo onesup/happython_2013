@@ -6,7 +6,7 @@ TIMEOUT=${TIMEOUT-60}
 #여기 수정 필요
 
 AS_USER=onesup
-APP_NAME=fcanvas
+APP_NAME=kfarm
 
 APP_ROOT=/home/$AS_USER/www/$APP_NAME/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
