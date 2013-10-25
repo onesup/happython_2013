@@ -1,7 +1,9 @@
 require "tmpdir"
-TMP_DIR = Dir.tmpdir
+
+USER_NAME = "onesup"
 APP_NAME = "kfarm"
-APP_PATH = File.expand_path("/home/daul/#{APP_NAME}/current")
+APP_PATH = File.expand_path("/home/#{USER_NAME}/www/#{APP_NAME}/current")
+TMP_DIR = Dir.tmpdir
 
 root = "#{APP_PATH}"
 working_directory root

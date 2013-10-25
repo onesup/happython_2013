@@ -3,21 +3,21 @@ require "net/sftp"
 
 set :rails_env, "production" #added for delayed job
 set :application, "kfarm"
-set :user, "daul"
-set :deploy_to, "/home/#{user}/#{application}"
+set :user, "onesup"
+set :deploy_to, "/home/#{user}/www/#{application}"
 set :deploy_via, :copy
 set :use_sudo, false
 set :scm, "git"
-set :repository, "git@bitbucket.org:#{application}/#{application}.git"
+set :repository, "git@github.com:onesup/happython_2013.git"
 set :branch, "master"
 set :default_environment, {
-      'PATH' => "/home/daul/.rbenv/versions/2.0.0-p0/bin/:$PATH"
+      'PATH' => "/home/#{user}/.rbenv/versions/2.0.0-p195/bin/:$PATH"
     }
 set :keep_releases, 5
-set :shared_children, shared_children + %w{public/uploads}
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-server "14.63.162.188", :web, :app, :db, primary: true
+set :shared_children, shared_children + %w{public/uploads}
+server "ssl.minivertising.kr", :web, :app, :db, primary: true
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 # for delayed_job
@@ -34,21 +34,10 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
   end
   after "deploy:setup", "deploy:setup_config"
   
   task :upload_parameters do
-    # origin_file = "config/email.yml"
-    # destination_file = "#{shared_path}/config/email.yml"
-    # run "mkdir -p #{File.dirname(destination_file)}"
-    # top.upload(origin_file, destination_file)
-    origin_file = "config/facebook.yml"
-    destination_file = "#{shared_path}/config/facebook.yml"
-    run "mkdir -p #{File.dirname(destination_file)}"
-    top.upload(origin_file, destination_file)
-    
   end
   before "deploy:setup", "deploy:upload_parameters"
 
@@ -62,10 +51,10 @@ namespace :deploy do
   end
   
   desc "Make symlink for custom config yaml"
+
   task :symlink_parameters do
-    run "ln -nfs #{shared_path}/config/facebook.yml #{latest_release}/config/facebook.yml"
-    run "ln -nfs #{shared_path}/config/email.yml #{latest_release}/config/email.yml"
   end
+
   after "deploy:finalize_update", "deploy:symlink_parameters"
   
   before "deploy", "deploy:check_revision"
