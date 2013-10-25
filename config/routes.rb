@@ -2,10 +2,18 @@ Kfarm::Application.routes.draw do
   match 'guide' => "home/guide", :via => :get
   get "faq/index"
   get "home/guide"
-  resources :jobs
+
+  resources :jobs do
+  end
+
+  resources :users do
+    member do
+      get 'current_works'
+    end
+  end
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
-  
+    
   namespace :admin do
     resources :answers
     resources :jobs

@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
     end
     user
   end
+  
+  def current_works
+    self.works
+  end
 end

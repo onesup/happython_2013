@@ -29,12 +29,14 @@ puts "created #{User.first.email} and that made administer"
 titles = %w(사과 배 포도 복숭아 멜론 깻잎 호박 옥수수)
 contents = " 내용입니다."
 titles.each do |title|
-  Job.create!(title: title, contents: title + contents)
+  job = Job.create!(title: title, contents: title + contents)
   Answer.create!(title: title, contents: title + contents)
   Notice.create!(title: title, contents: title + contents)
   Question.create!(title: title, contents: title + contents)
   Review.create!(title: title, contents: title + contents)
   Banner.create!(title: title, contents: title + contents)
-  User.create(email: title+"@gmail.com", password:"123123123")
+  user = User.new(email: title+"@gmail.com", password:"123123123")
+  user.works << job
+  user.save
   puts Job.last.title
 end
