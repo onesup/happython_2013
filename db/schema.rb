@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928231702) do
+ActiveRecord::Schema.define(version: 20131025220847) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -40,6 +40,36 @@ ActiveRecord::Schema.define(version: 20130928231702) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "books", force: true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.string   "foreign_title"
+    t.string   "first_category"
+    t.string   "second_category"
+    t.string   "authors"
+    t.string   "main_author"
+    t.string   "publisher"
+    t.string   "published_at"
+    t.string   "language"
+    t.string   "size"
+    t.string   "last_page"
+    t.string   "isbn10"
+    t.string   "isbn13"
+    t.string   "price"
+    t.string   "reviewed"
+    t.string   "description"
+    t.string   "index"
+    t.string   "series"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "books", ["isbn13"], name: "index_books_on_isbn13"
+  add_index "books", ["main_author"], name: "index_books_on_main_author"
+  add_index "books", ["series"], name: "index_books_on_series"
+  add_index "books", ["title"], name: "index_books_on_title"
+  add_index "books", ["url"], name: "index_books_on_url"
 
   create_table "jobs", force: true do |t|
     t.integer  "mentor_id"

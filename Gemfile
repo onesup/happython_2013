@@ -18,6 +18,9 @@ gem 'omniauth'
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'kaminari'
 
+gem 'nokogiri'
+gem 'watir-webdriver'
+
 # for Rails 4.0
 gem 'simple_form', github: 'plataformatec/simple_form', tag: 'v3.0.0.beta1'
 # You'll need to include the following dependencies of Summernote
