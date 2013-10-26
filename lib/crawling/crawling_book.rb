@@ -103,6 +103,7 @@ module Crawling
   
     def self.parse_item(url)
       url = "http://book.daum.net" + url
+      puts url
       item = Hash.new
       begin
         doc = Nokogiri::HTML(open(url))
@@ -114,7 +115,7 @@ module Crawling
           item[:url] = url
           item[:author] = authors
           item[:reviewed] = reviewed
-          unless doc.xpath('//div[@id="page_body"]//h2[@class="title"]/span').nil?
+          unless doc.xpath('//div[@id="page_body"]//h2[@class="title"]/span').first.nil?
             item[:title] = doc.xpath('//div[@id="page_body"]//h2[@class="title"]/span').first.text
             item[:series] = doc.xpath('//div[@id="page_body"]//h2[@class="title"]/span').last.text
           else
@@ -214,8 +215,13 @@ module Crawling
       start_record ||= 500000 #350445
       n_count = 0
       BookUrl.all.each do |i|
-        book = CrawlingBook.parse_item(i.url)
-        CrawlingBook.put_item(book)
+        url = "http://book.daum.net" + i.url
+        unless open(url).base_uri.host == "login.daum.net"
+          book = CrawlingBook.parse_item(i.url)
+          CrawlingBook.put_item(book)
+        else
+          puts "#{url} need login"
+        end
       end
       # BookUrl.limit(100).offset(n_count) do |i|
       #   if i.id > start_record
