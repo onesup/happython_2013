@@ -4,8 +4,12 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.limit(10)
-    @books = Book.search(params[:q])
+    unless params[:q].nil?
+      @books = Book.search(params[:q])
+    else
+      @books = Book.limit(10)
+    end
+    
   end
 
   def search
