@@ -4,8 +4,11 @@ class UsersController < ApplicationController
   def collection
     rental_book = Book.find(params[:book_id]).create_rental_book
     user = User.find(params[:id])
-    user.collection_books << rental_book
-    render nothing: true
+    if user.collection_books << rental_book
+      render json: {status: true}
+    else
+      render json: {status: false}
+    end
   end
   
   
