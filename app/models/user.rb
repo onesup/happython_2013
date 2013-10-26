@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :jobs, through: :applications, foreign_key: "mentee_id"
   has_many :applications, foreign_key: "mentee_id"
   has_many :reviews
+  has_many :rental_books, class_name: "collection_book", foreign_key: "host_id"
   
   mount_uploader :avatar, AvatarUploader
   mount_uploader :farm, FarmUploader

@@ -13,6 +13,7 @@ class CreateRentalBooks < ActiveRecord::Migration
       t.integer  "star"
       t.datetime "created_at"
       t.datetime "updated_at"
+      t.integer  "book_id"
       t.timestamps
     end
   end

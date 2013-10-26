@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131026114405) do
+ActiveRecord::Schema.define(version: 20131026115020) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -117,6 +117,15 @@ ActiveRecord::Schema.define(version: 20131026114405) do
     t.datetime "updated_at"
   end
 
+  create_table "rental_applications", force: true do |t|
+    t.integer  "guest_id"
+    t.integer  "rental_book_id"
+    t.boolean  "confirm"
+    t.datetime "confirmed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "rental_books", force: true do |t|
     t.integer  "host_id"
     t.string   "category"
@@ -130,6 +139,7 @@ ActiveRecord::Schema.define(version: 20131026114405) do
     t.integer  "star"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "book_id"
   end
 
   create_table "reviews", force: true do |t|
