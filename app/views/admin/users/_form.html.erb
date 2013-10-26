@@ -25,6 +25,18 @@
       </div>
     </div>
     <div class="control-group">
+      <label class="control-label">아기사진</label>
+      <div>
+        <%= image_tag @user.avatar unless @user.avatar.nil? %>
+      </div>
+      <div class="controls">
+        <div class="uploader hover" id="uniform-fileInput">
+          <%= f.file_field :baby_picture %>
+        </div>
+        <span class="help-inline">메인페이지 표시.</span>
+      </div>
+    </div>
+    <div class="control-group">
       <label class="control-label" for="focusedInput">이름</label>
       <div class="controls">
         <%= f.text_field :name, id: "focusedInput", class: "input-xlarge focused"%>
