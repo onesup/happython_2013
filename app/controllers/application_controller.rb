@@ -1,7 +1,8 @@
 #encoding: utf-8
 class ApplicationController < ActionController::Base
   include TheRoleController
-  protect_from_forgery with: :exception
+
+  protect_from_forgery with: :null_session
   
   # your Access Denied processor
   def access_denied
