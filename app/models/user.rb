@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
   mount_uploader :farm, FarmUploader
+  mount_uploader :baby_picture, BabyPictureUploader
   
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
                            uid:auth.uid,
                            email:auth.info.email,
                            password:Devise.friendly_token[0,20]
-                           )
+                          )
     end
     user
   end

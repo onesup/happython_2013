@@ -12,6 +12,8 @@
 # http://book.daum.net/detail/book.do?bookid=KOR9788906035555
 # 해당 책 정보는 제한되었습니다.
 # http://book.daum.net/detail/book.do?bookid=BOK00003309287IN
+# 책 크기 정보 없음
+# http://book.daum.net/detail/book.do?bookid=BOK00021485484YE
 
 require 'open-uri'
 module Crawling
@@ -146,7 +148,7 @@ module Crawling
               unless item[:last_page] = doc.xpath('//div[@id="page_body"]/div[@class="topContWrap"]/div[@class="bookInfoArea"]/dl[@class="info"]//dd')[2].children[2].nil?
                 item[:last_page] = doc.xpath('//div[@id="page_body"]/div[@class="topContWrap"]/div[@class="bookInfoArea"]/dl[@class="info"]//dd')[2].children[2].text.strip
               else
-                item[:last_page = "미등록"
+                item[:last_page] = "미등록"
               end
             end
           end
