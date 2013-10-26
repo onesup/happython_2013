@@ -5,12 +5,11 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.limit(10)
+    @books = Book.search(params[:q])
   end
 
   def search
-    
-    puts params[:q]
-    @books = Book.limit(5)
+    @books = Book.search(params[:q])
     render nothing: true
   end
   

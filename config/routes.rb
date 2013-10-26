@@ -6,7 +6,8 @@ Kfarm::Application.routes.draw do
   
   resources :books do
     collection do
-      get 'search'
+      get 'search/:q', to: 'books#search'
+      get '/:q', to: 'books#index'
     end
     resources :users do
       member do
