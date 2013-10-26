@@ -37,9 +37,9 @@ group :development do
   gem 'guard-rails'
 end
 
-group :production do
-  gem 'rb-readline', '~> 0.5.0.pre.1'
-end
+# group :production do
+#   gem 'rb-readline', '~> 0.5.0.pre.1'
+# end
 
 group :test do
   gem 'capybara'

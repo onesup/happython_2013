@@ -208,17 +208,21 @@ class CrawlingBook
   def self.book_start(start_record = nil)
     start_record ||= 500000 #350445
     n_count = 0
-    BookUrl.find(:all, :limit => 100, :offset => n_count) do |i|
-      if i.id > start_record
-        puts i.id
-        unless Book.exists?(:url => "http://book.daum.net" + i.url)
-          puts i.id
-          book = CrawlingBook.parse_item(i.url)
-          CrawlingBook.put_item(book)
-        end
-      end
-      n_count += 100
+    BookUrl.all.each do |i|
+      book = CrawlingBook.parse_item(i.url)
+      CrawlingBook.put_item(book)
     end
+    # BookUrl.limit(100).offset(n_count) do |i|
+    #   if i.id > start_record
+    #     puts i.id
+    #     unless Book.exists?(:url => "http://book.daum.net" + i.url)
+    #       puts i.id
+    #       book = CrawlingBook.parse_item(i.url)
+    #       CrawlingBook.put_item(book)
+    #     end
+    #   end
+    #   n_count += 100
+    # end
   end
   
   def self.categories
