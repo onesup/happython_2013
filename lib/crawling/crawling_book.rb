@@ -40,6 +40,7 @@ module Crawling
       i.description	= item[:description]
       i.index	= item[:index]
       i.series = item[:series]
+      i.image = item[:image]
       i.save
     end
   
@@ -113,6 +114,9 @@ module Crawling
           reviewed = 0    
           doc.xpath('//dd[@id="author_info"]//a').each{|x| authors << x.text.strip}
           doc.xpath('//a[@class="quote_num"]').each{|x| reviewed = reviewed + x.text.to_i}
+          unless doc.xpath('//div[@class="bookImgArea"]//img[@class="bImg"]').nil?
+            item[:image] = doc.xpath('//div[@class="bookImgArea"]//img[@class="bImg"]').first['src']
+          end
           item[:url] = url
           item[:author] = authors
           item[:reviewed] = reviewed

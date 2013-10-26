@@ -1,1 +1,1 @@
-json.extract! @book, :url, :title, :foreign_title, :first_category, :second_category, :authors, :main_author, :publisher, :published_at, :language, :size, :last_page, :isbn10, :isbn13, :price, :reviewed, :description, :index, :series, :created_at, :updated_at
+json.extract! @book, :url, :title, :foreign_title, :first_category, :second_category, :authors, :main_author, :publisher, :published_at, :language, :size, :last_page, :isbn10, :isbn13, :price, :reviewed, :description, :index, :series, :created_at, :updated_at, :image

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131026073414) do
+ActiveRecord::Schema.define(version: 20131026083634) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20131026073414) do
     t.string   "series"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   add_index "books", ["isbn13"], name: "index_books_on_isbn13"
