@@ -1,7 +1,8 @@
 require 'rake'
+require 'crawling'
 namespace :start do
-  desc "display the current environment of rake"
-  task :book do
-    CrawlingBook.book_start()
+  desc "시작"
+  task :book => :environment do
+    Crawling::CrawlingBook.book_start()
   end
 end
