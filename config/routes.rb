@@ -7,6 +7,11 @@ Kfarm::Application.routes.draw do
     collection do
       get 'search'
     end
+    resources :users do
+      member do
+        post 'collection'
+      end
+    end
   end
   
   

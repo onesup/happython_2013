@@ -4,12 +4,16 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, 
   :validatable, :omniauthable, :omniauth_providers => [:facebook]# , :confirmable 
+
+  has_many :reviews
   
   has_many :works, class_name: "Job", foreign_key: "mentor_id"
   has_many :jobs, through: :applications, foreign_key: "mentee_id"
   has_many :applications, foreign_key: "mentee_id"
-  has_many :reviews
-  has_many :rental_books, class_name: "collection_book", foreign_key: "host_id"
+
+  has_many :collection_books, class_name: "RentalBook", foreign_key: "host_id"
+  has_many :rental_books, through: :rental_applications, foreign_key: "guest_id"
+  has_many :rental_applications, foreign_key: "guest_id"
   
   mount_uploader :avatar, AvatarUploader
   mount_uploader :farm, FarmUploader

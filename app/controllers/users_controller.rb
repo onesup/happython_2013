@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :current_works]
   
+  def collection
+    rental_book = Book.find(params[:book_id]).create_rental_book
+    user = User.find(params[:id])
+    user.collection_books << rental_book
+    render nothing: true
+  end
+  
+  
   def join
     @user = User.new()
     @user.password = params[:password]
