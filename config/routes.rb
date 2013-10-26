@@ -1,4 +1,5 @@
 Kfarm::Application.routes.draw do
+  get "collection_books/index"
   match 'guide' => "home/guide", :via => :get
   get "faq/index"
   get "home/guide"
@@ -25,6 +26,7 @@ Kfarm::Application.routes.draw do
     collection do
       post 'join'
     end
+    resources :collection_books, :only => [:index]
   end
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }

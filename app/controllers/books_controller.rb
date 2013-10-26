@@ -7,6 +7,13 @@ class BooksController < ApplicationController
     @books = Book.limit(10)
   end
 
+  def search
+    
+    puts params[:q]
+    @books = Book.limit(5)
+    render nothing: true
+  end
+  
   # GET /books/1
   # GET /books/1.json
   def show

@@ -12,3 +12,4 @@
 //= require ./notices/_manifest.js
 //= require ./banners/_manifest.js
 //= require ./books/_manifest.js
+//= require ./collection_books/_manifest.js
