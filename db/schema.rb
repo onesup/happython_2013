@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025222240) do
+ActiveRecord::Schema.define(version: 20131026052619) do
 
   create_table "answers", force: true do |t|
     t.string   "title"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20131025222240) do
     t.string   "foreign_title"
     t.string   "first_category"
     t.string   "second_category"
-    t.string   "authors"
+    t.text     "authors",         limit: 255
     t.string   "main_author"
     t.string   "publisher"
     t.string   "published_at"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20131025222240) do
     t.string   "isbn13"
     t.string   "price"
     t.string   "reviewed"
-    t.string   "description"
+    t.text     "description",     limit: 255
     t.string   "index"
     t.string   "series"
     t.datetime "created_at"

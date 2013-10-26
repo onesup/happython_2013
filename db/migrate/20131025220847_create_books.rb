@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :foreign_title
       t.string :first_category
       t.string :second_category
-      t.string :authors
+      t.text :authors
       t.string :main_author
       t.string :publisher
       t.string :published_at
@@ -17,7 +17,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :isbn13
       t.string :price
       t.string :reviewed
-      t.string :description
+      t.text :description
       t.string :index
       t.string :series
 
