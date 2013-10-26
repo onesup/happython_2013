@@ -10,8 +10,6 @@ class User < ActiveRecord::Base
   has_many :applications, foreign_key: "mentee_id"
   has_many :reviews
   
-  serialize :latlng
-  
   mount_uploader :avatar, AvatarUploader
   mount_uploader :farm, FarmUploader
   mount_uploader :baby_picture, BabyPictureUploader

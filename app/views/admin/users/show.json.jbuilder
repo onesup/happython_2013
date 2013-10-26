@@ -1,0 +1,1 @@
+json.extract! @user, :email, :password, :name, :phone, :avatar, :baby_picture, :farm, :mentor_major, :mentor_guide, :role_id, :baby_name, :lat, :lng, :address

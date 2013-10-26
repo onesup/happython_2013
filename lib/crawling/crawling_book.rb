@@ -14,7 +14,6 @@
 # http://book.daum.net/detail/book.do?bookid=BOK00003309287IN
 # 책 크기 정보 없음
 # http://book.daum.net/detail/book.do?bookid=BOK00021485484YE
-
 require 'open-uri'
 module Crawling
   class CrawlingBook
