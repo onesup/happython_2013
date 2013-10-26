@@ -17,6 +17,9 @@ Kfarm::Application.routes.draw do
     member do
       get 'current_works'
     end
+    collection do
+      post 'join'
+    end
   end
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }

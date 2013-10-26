@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :current_works]
   
+  def join
+    @user = User.new()
+    @user.password = params[:password]
+    @user.email = params[:email]
+    @user.save
+    render nothing: true
+  end
+  
   def show
   end
 

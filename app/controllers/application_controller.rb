@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include TheRoleController
 
   protect_from_forgery with: :null_session
+  skip_before_filter  :verify_authenticity_token
   
   # your Access Denied processor
   def access_denied
